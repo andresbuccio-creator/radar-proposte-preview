@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proposta 3 — Il radar è la mappa · Radar Concessioni</title>
+<style>
+:root{--bg:#0a2540;--panel:#0e2c4d;--panel2:#143a5e;--line:#1c3a5a;--txt:#eaf2fb;--muted:#9cc4e6;--accent:#38bdf8;--open:#22c55e;--prep:#fbbf24;--closed:#64748b;--gold:#fbbf24;--danger:#ef4444}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt)}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+a{color:var(--accent);text-decoration:none}
+.btn{cursor:pointer;border:none;border-radius:10px;padding:12px 20px;font-size:15px;font-weight:700;font-family:inherit}
+.btn-primary{background:var(--accent);color:#06151b}.btn-gold{background:var(--gold);color:#1a1206}
+.btn-ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}.btn-sm{padding:8px 13px;font-size:13px}
+nav{position:absolute;top:0;left:0;right:0;z-index:30;height:64px}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:850;font-size:18px;text-shadow:0 2px 10px rgba(0,0,0,.5)}.logo b{color:var(--accent)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+/* full-bleed map hero */
+.maphero{position:relative;height:88vh;min-height:560px;overflow:hidden;
+  background:
+   radial-gradient(60% 50% at 78% 30%,rgba(56,189,248,.10),transparent 60%),
+   radial-gradient(50% 50% at 30% 80%,rgba(34,197,94,.08),transparent 60%),
+   linear-gradient(160deg,#0a2540,#0c2e52 55%,#0a2540)}
+.maphero::before{content:"";position:absolute;inset:0;
+  background-image:linear-gradient(rgba(56,189,248,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(56,189,248,.06) 1px,transparent 1px);
+  background-size:46px 46px;mask-image:radial-gradient(100% 100% at 70% 40%,#000,transparent 80%)}
+/* fake italy boot of pins */
+.pins{position:absolute;inset:0}
+.pin{position:absolute;width:13px;height:13px;border-radius:50%;transform:translate(-50%,-50%)}
+.pin.a{background:var(--open);box-shadow:0 0 0 5px rgba(34,197,94,.18),0 0 14px rgba(34,197,94,.7)}
+.pin.p{background:var(--prep);box-shadow:0 0 0 4px rgba(251,191,36,.16)}
+.pin.c{background:var(--closed);width:9px;height:9px}
+.pin.a::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:1px solid var(--open);animation:ring 2.4s infinite}
+@keyframes ring{0%{transform:scale(.6);opacity:.9}100%{transform:scale(2.4);opacity:0}}
+/* floating panel */
+.panel{position:absolute;z-index:20;top:50%;left:7%;transform:translateY(-50%);max-width:430px;
+  background:rgba(10,30,55,.72);backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:20px;padding:34px;box-shadow:0 30px 70px rgba(0,0,0,.5)}
+.kicker{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--accent);background:rgba(56,189,248,.12);border:1px solid rgba(56,189,248,.3);padding:5px 12px;border-radius:20px;margin-bottom:18px}
+.panel h1{font-size:clamp(28px,3.6vw,40px);line-height:1.1;margin:0 0 14px;font-weight:850;letter-spacing:-.6px}
+.panel h1 .hl{color:var(--accent)}
+.panel p{color:var(--muted);font-size:16px;line-height:1.6;margin:0 0 24px}
+.panel .cta{display:flex;gap:12px;flex-wrap:wrap}
+.legend{position:absolute;z-index:20;bottom:26px;left:7%;display:flex;gap:18px;font-size:13px;color:var(--muted);background:rgba(10,30,55,.6);backdrop-filter:blur(8px);border:1px solid var(--line);padding:10px 16px;border-radius:30px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.legend .ia{background:var(--open)}.legend .ip{background:var(--prep)}.legend .ic{background:var(--closed)}
+/* floating mini-card over a pin */
+.tip{position:absolute;z-index:25;top:24%;right:14%;background:var(--panel);border:1px solid var(--open);box-shadow:0 0 0 1px var(--open) inset,0 18px 40px rgba(0,0,0,.5);border-radius:13px;padding:14px 16px;max-width:230px}
+.tip .b{font-size:10.5px;font-weight:800;text-transform:uppercase;color:#86efac}
+.tip h4{margin:4px 0 4px;font-size:16px}.tip p{margin:0;font-size:12.5px;color:var(--muted);line-height:1.5}
+section.block{padding:54px 0;border-top:1px solid var(--line)}
+.h2{font-size:27px;font-weight:800;text-align:center;margin:0 0 8px}
+.h2sub{color:var(--muted);text-align:center;max-width:620px;margin:0 auto 34px;font-size:15px}
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1000px;margin:0 auto}
+.fc{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px}
+.fc h4{margin:0 0 6px;font-size:16px}.fc p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.6}
+.note{text-align:center;margin-top:60px;padding:16px;color:#6f96bd;font-size:12.5px}
+@media(max-width:880px){.maphero{height:auto;padding:90px 0 40px}.panel{position:static;transform:none;margin:0 auto;left:auto}.tip,.legend{display:none}.feat{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <div class="logo">📡 Radar <b>Concessioni</b></div>
+  <div class="nav-cta"><a class="btn btn-ghost btn-sm" href="#">EN</a><a class="btn btn-gold btn-sm" href="#">Abbonati</a></div>
+</div></nav>
+
+<header class="maphero">
+  <div class="pins">
+    <!-- liguria/tirreno alto -->
+    <span class="pin a" style="left:30%;top:34%"></span>
+    <span class="pin p" style="left:33%;top:30%"></span>
+    <!-- adriatico -->
+    <span class="pin a" style="left:55%;top:40%"></span>
+    <span class="pin p" style="left:57%;top:46%"></span>
+    <span class="pin p" style="left:54%;top:36%"></span>
+    <span class="pin c" style="left:60%;top:52%"></span>
+    <span class="pin p" style="left:62%;top:58%"></span>
+    <span class="pin c" style="left:66%;top:66%"></span>
+    <span class="pin c" style="left:70%;top:74%"></span>
+    <!-- tirreno basso / sicilia -->
+    <span class="pin a" style="left:34%;top:48%"></span>
+    <span class="pin c" style="left:44%;top:62%"></span>
+    <span class="pin c" style="left:48%;top:72%"></span>
+    <span class="pin c" style="left:42%;top:80%"></span>
+    <span class="pin c" style="left:36%;top:84%"></span>
+    <span class="pin c" style="left:28%;top:78%"></span>
+    <!-- sardegna -->
+    <span class="pin c" style="left:20%;top:66%"></span>
+    <span class="pin c" style="left:18%;top:72%"></span>
+  </div>
+
+  <div class="tip">
+    <div class="b">🟢 Gara aperta</div>
+    <h4>Rimini (RN)</h4>
+    <p>27 lotti · offerte entro 10/09 ore 13:00 · base €986.545.</p>
+  </div>
+
+  <div class="panel">
+    <span class="kicker">Tutta Italia, comune per comune</span>
+    <h1>Il radar delle gare balneari, <span class="hl">in un colpo d'occhio</span>.</h1>
+    <p>Verde è aperta. Giallo in preparazione. Grigio chiusa. Tocca la tua spiaggia e vedi scadenze, criteri e documenti ufficiali.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#">Apri la mappa gratis</a>
+      <a class="btn btn-gold" href="#">Sblocca Pro</a>
+    </div>
+  </div>
+
+  <div class="legend"><span><i class="ia"></i>Aperta</span><span><i class="ip"></i>In preparazione</span><span><i class="ic"></i>Chiusa</span></div>
+</header>
+
+<section class="block"><div class="wrap">
+  <div class="h2">Una sola cosa, fatta bene: le tue spiagge</div>
+  <div class="h2sub">I portali appalti sono generalisti e da addetti ai lavori. Qui c'è solo la riforma Bolkestein, comune per comune.</div>
+  <div class="feat">
+    <div class="fc"><h4>🗺️ Vista nazionale</h4><p>59 comuni costieri curati e oltre 600 monitorati. Filtra per regione, priorità e stato.</p></div>
+    <div class="fc"><h4>⏰ Avvisi mirati</h4><p>Salva i tuoi comuni con ★. Quando la gara passa ad aperta, ti arriva l'email. Zero rumore.</p></div>
+    <div class="fc"><h4>📄 Fonti ufficiali</h4><p>Ogni scheda linka il bando, la G.U. e l'albo pretorio, con data dell'ultima verifica.</p></div>
+  </div>
+</div></section>
+
+<div class="note">PROPOSTA 3 — “Il radar è la mappa” · mappa full-bleed con pannello flottante. Mockup statico (mappa simulata; in produzione = Leaflet reale). Palette e modello reali.</div>
+</body>
+</html>

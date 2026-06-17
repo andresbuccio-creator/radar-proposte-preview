@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Proposta 1 — Cerca la tua spiaggia · Radar Concessioni</title>
+<style>
+:root{--bg:#0a2540;--panel:#0e2c4d;--panel2:#143a5e;--line:#1c3a5a;--txt:#eaf2fb;--muted:#9cc4e6;--accent:#38bdf8;--open:#22c55e;--prep:#fbbf24;--closed:#64748b;--gold:#fbbf24;--danger:#ef4444}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+a{color:var(--accent);text-decoration:none}
+.btn{cursor:pointer;border:none;border-radius:10px;padding:12px 20px;font-size:15px;font-weight:700;font-family:inherit}
+.btn-primary{background:var(--accent);color:#06151b}
+.btn-gold{background:var(--gold);color:#1a1206}
+.btn-ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+.btn-sm{padding:8px 13px;font-size:13px}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(10,37,64,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-weight:850;font-size:18px;letter-spacing:-.3px}.logo b{color:var(--accent)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+/* hero search-first */
+.hero{padding:72px 0 30px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% -10%,rgba(56,189,248,.16),transparent 60%);pointer-events:none}
+.kicker{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--accent);background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.3);padding:5px 12px;border-radius:20px;margin-bottom:20px}
+.hero h1{font-size:clamp(30px,5.4vw,50px);line-height:1.08;margin:0 0 14px;font-weight:850;letter-spacing:-.8px}
+.hero h1 .hl{color:var(--accent)}
+.hero p.sub{font-size:clamp(15px,2.2vw,19px);color:var(--muted);max-width:600px;margin:0 auto 34px}
+/* big search */
+.searchbox{position:relative;z-index:2;max-width:660px;margin:0 auto;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:10px;display:flex;gap:8px;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.searchbox input{flex:1;background:transparent;border:none;color:var(--txt);font-size:18px;padding:14px 16px;font-family:inherit;outline:none}
+.searchbox input::placeholder{color:#5f86ad}
+.suggest{max-width:660px;margin:14px auto 0;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;font-size:13px;color:var(--muted)}
+.suggest a{background:var(--panel2);border:1px solid var(--line);padding:7px 13px;border-radius:20px;color:var(--txt)}
+/* instant result card */
+.result{max-width:660px;margin:30px auto 0;text-align:left;background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--open);box-shadow:0 0 0 1px var(--open) inset;border-radius:16px;padding:22px 24px}
+.result .top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.badge{font-size:11px;font-weight:800;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:.4px}
+.badge.A{background:rgba(34,197,94,.16);color:#86efac;border:1px solid rgba(34,197,94,.4)}
+.result h3{margin:0;font-size:22px}
+.result .meta{color:var(--muted);font-size:14px;line-height:1.7}
+.result .meta b{color:var(--txt)}
+.cd{display:flex;gap:10px;margin:16px 0 4px}
+.cd div{background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.35);border-radius:10px;padding:8px 14px;text-align:center;min-width:62px}
+.cd .n{font-size:24px;font-weight:850;color:#fca5a5}.cd .l{font-size:10px;color:var(--muted);text-transform:uppercase}
+.locked{filter:blur(4px);user-select:none}
+.unlock{margin-top:14px;display:flex;align-items:center;gap:12px;background:rgba(251,191,36,.08);border:1px dashed rgba(251,191,36,.4);border-radius:10px;padding:12px 14px}
+.unlock span{flex:1;font-size:13.5px;color:var(--muted)}
+/* stats strip */
+.stats{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-top:46px;position:relative;z-index:2}
+.stat .n{font-size:32px;font-weight:850;color:var(--accent)}
+.stat .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+/* trust */
+.trust{border-top:1px solid var(--line);margin-top:50px;padding:26px 0;text-align:center;color:var(--muted);font-size:13.5px}
+.trust b{color:var(--txt)}
+section.block{padding:54px 0;border-top:1px solid var(--line)}
+.h2{font-size:27px;font-weight:800;text-align:center;margin:0 0 8px}
+.h2sub{color:var(--muted);text-align:center;max-width:620px;margin:0 auto 34px;font-size:15px}
+.steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;max-width:900px;margin:0 auto}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
+.step .num{width:34px;height:34px;border-radius:10px;background:rgba(56,189,248,.14);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:850;margin-bottom:12px}
+.step h4{margin:0 0 6px;font-size:16px}.step p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.6}
+.note{text-align:center;margin-top:60px;padding:16px;color:#6f96bd;font-size:12.5px}
+@media(max-width:760px){.steps{grid-template-columns:1fr}.searchbox{flex-direction:column}.searchbox .btn{width:100%}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <div class="logo">📡 Radar <b>Concessioni</b></div>
+  <div class="nav-cta">
+    <a class="btn btn-ghost btn-sm" href="#">EN</a>
+    <a class="btn btn-gold btn-sm" href="#">Abbonati</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="kicker">Riforma Bolkestein · gare 2026</span>
+  <h1>La gara della tua spiaggia<br>è <span class="hl">aperta</span>?</h1>
+  <p class="sub">Scrivi il tuo comune. Ti diciamo subito se la gara è aperta, quando scade e cosa serve per partecipare.</p>
+
+  <div class="searchbox">
+    <input type="text" value="Rimini" placeholder="Cerca il tuo comune, es. Cervia…">
+    <button class="btn btn-primary">Cerca la gara</button>
+  </div>
+  <div class="suggest">
+    <span style="align-self:center">Più cercati:</span>
+    <a href="#">Rimini</a><a href="#">Jesolo</a><a href="#">Taggia</a><a href="#">Pietra Ligure</a><a href="#">Loano</a>
+  </div>
+
+  <!-- ESEMPIO RISULTATO ISTANTANEO -->
+  <div class="result">
+    <div class="top"><span class="badge A">🟢 Gara aperta</span><h3>Rimini <small style="color:var(--muted);font-weight:600">(RN)</small></h3></div>
+    <div class="meta">Pubblicato il bando: <b>27 lotti</b> sul Litorale Nord · criterio <b>OEPV 90/10</b> · base d'asta <b>€986.545</b>.</div>
+    <div class="cd">
+      <div><div class="n">84</div><div class="l">giorni</div></div>
+      <div><div class="n">11</div><div class="l">ore</div></div>
+      <div><div class="n">40</div><div class="l">min</div></div>
+    </div>
+    <div class="meta">Offerte entro il <b>10/09/2026 ore 13:00</b> <span class="locked">· durata 12 anni · indennizzo €…</span></div>
+    <div class="unlock">
+      <span>🔒 Scadenze esatte, criteri, link ai documenti ufficiali e avvisi email: con <b>Radar Pro</b>.</span>
+      <button class="btn btn-gold btn-sm">Sblocca</button>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">59</div><div class="l">Comuni monitorati</div></div>
+    <div class="stat"><div class="n">3</div><div class="l">Gare aperte ora</div></div>
+    <div class="stat"><div class="n">15</div><div class="l">Regioni coperte</div></div>
+  </div>
+
+  <div class="trust">Fonti pubbliche ufficiali — <b>Gazzetta Ufficiale</b>, albi pretori, portali appalti — con link diretto. Verifica umana ogni mattina.</div>
+</div></header>
+
+<section class="block"><div class="wrap">
+  <div class="h2">Dalla ricerca alla domanda</div>
+  <div class="h2sub">Tre passi, zero giornate perse tra Gazzette e albi pretori.</div>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><h4>🔎 Cerca</h4><p>Il tuo comune, lo stato della gara in tempo reale, tutta Italia in un'unica vista.</p></div>
+    <div class="step"><div class="num">2</div><h4>⏰ Non sbagli i tempi</h4><p>Scadenze esatte, conto alla rovescia e avviso email appena la tua gara apre.</p></div>
+    <div class="step"><div class="num">3</div><h4>📄 Vai preparato</h4><p>Criteri, durata, indennizzo, link ai documenti ufficiali e dossier su misura.</p></div>
+  </div>
+</div></section>
+
+<div class="note">PROPOSTA 1 — “Cerca la tua spiaggia” · search-first. Mockup statico, dati d'esempio. Palette e modello reali di Radar Concessioni.</div>
+</body>
+</html>
