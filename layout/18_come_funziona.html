@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Proposta 18 — Dal comune all'avviso, in 3 mosse · Radar Concessioni</title>
+<style>
+:root{--bg:#0a2540;--panel:#0e2c4d;--panel2:#143a5e;--line:#1c3a5a;--txt:#eaf2fb;--muted:#9cc4e6;--accent:#facc15;--open:#22c55e;--prep:#fbbf24;--closed:#64748b;--gold:#fbbf24;--danger:#ef4444}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+a{color:var(--accent);text-decoration:none}
+.btn{cursor:pointer;border:none;border-radius:10px;padding:12px 20px;font-size:15px;font-weight:700;font-family:inherit}
+.btn-primary{background:var(--accent);color:#1a1206}
+.btn-gold{background:var(--gold);color:#1a1206}
+.btn-ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+.btn-sm{padding:8px 13px;font-size:13px}
+.btn-lg{padding:16px 32px;font-size:17px;border-radius:12px}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(10,37,64,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-weight:850;font-size:18px;letter-spacing:-.3px}.logo b{color:var(--accent)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+/* hero */
+.hero{padding:72px 0 18px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% -10%,rgba(250,204,21,.14),transparent 60%);pointer-events:none}
+.kicker{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--accent);background:rgba(250,204,21,.1);border:1px solid rgba(250,204,21,.3);padding:5px 12px;border-radius:20px;margin-bottom:20px}
+.hero h1{font-size:clamp(30px,5.4vw,50px);line-height:1.08;margin:0 0 14px;font-weight:850;letter-spacing:-.8px}
+.hero h1 .hl{color:var(--accent)}
+.hero p.sub{font-size:clamp(15px,2.2vw,19px);color:var(--muted);max-width:600px;margin:0 auto 6px}
+/* 3 big steps */
+.tour{padding:40px 0 10px;position:relative;z-index:2}
+.tsteps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;max-width:1000px;margin:0 auto}
+.tstep{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:18px;padding:26px 22px;position:relative;display:flex;flex-direction:column}
+.tstep .bignum{font-size:54px;font-weight:850;line-height:1;color:var(--accent);opacity:.85;letter-spacing:-2px;margin-bottom:6px}
+.tstep h3{margin:0 0 6px;font-size:19px}
+.tstep p{margin:0 0 18px;color:var(--muted);font-size:13.5px;line-height:1.6}
+.mini{margin-top:auto;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:14px}
+/* mini-mockup 1: search bar */
+.m-search{display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:10px 12px}
+.m-search .ico{font-size:15px}
+.m-search .val{flex:1;font-size:15px;font-weight:700;color:var(--txt)}
+.m-search .cur{width:2px;height:18px;background:var(--accent);display:inline-block;border-radius:2px}
+.m-hint{margin-top:8px;font-size:11px;color:var(--muted);text-align:left;padding-left:2px}
+/* mini-mockup 2: toggle + email */
+.m-row{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:11px;padding:11px 12px}
+.m-row .lbl{font-size:12.5px;color:var(--txt);font-weight:600}
+.toggle{width:42px;height:24px;border-radius:20px;background:var(--open);position:relative;flex:0 0 auto;box-shadow:0 0 0 3px rgba(34,197,94,.15)}
+.toggle .knob{position:absolute;top:3px;right:3px;width:18px;height:18px;border-radius:50%;background:#fff}
+.m-email{display:flex;align-items:center;gap:8px;background:var(--panel);border:1px solid rgba(34,197,94,.45);border-radius:11px;padding:11px 12px;margin-top:9px}
+.m-email .ico{font-size:14px}
+.m-email .addr{flex:1;font-size:13px;color:var(--txt)}
+.m-email .ok{font-size:11px;font-weight:800;color:var(--open)}
+/* mini-mockup 3: dossier card */
+.m-doc{background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--open);border-radius:11px;padding:13px 14px}
+.m-doc .badge{display:inline-block;font-size:10.5px;font-weight:800;padding:3px 9px;border-radius:20px;background:rgba(34,197,94,.16);color:#86efac;border:1px solid rgba(34,197,94,.4);margin-bottom:9px}
+.m-doc .title{font-size:14px;font-weight:800;margin-bottom:4px}
+.m-doc .line{display:flex;align-items:center;gap:7px;font-size:11.5px;color:var(--muted);margin-top:5px}
+.m-doc .line b{color:var(--txt);font-weight:700}
+.m-doc .bar{height:7px;border-radius:6px;background:var(--line);margin-top:5px;overflow:hidden}
+.m-doc .bar i{display:block;height:100%;width:60%;background:var(--accent);border-radius:6px}
+/* connector arrows */
+.flow-arrow{display:none}
+/* recap strip */
+.recap{max-width:1000px;margin:34px auto 0;background:rgba(250,204,21,.06);border:1px dashed rgba(250,204,21,.35);border-radius:14px;padding:18px 22px;display:flex;align-items:center;gap:18px;flex-wrap:wrap;justify-content:center;text-align:center}
+.recap .txt{font-size:14.5px;color:var(--muted);flex:1;min-width:240px}
+.recap .txt b{color:var(--txt)}
+/* stats strip */
+.stats{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-top:40px;position:relative;z-index:2}
+.stat .n{font-size:32px;font-weight:850;color:var(--accent)}
+.stat .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+/* cta block */
+section.block{padding:54px 0;border-top:1px solid var(--line);text-align:center}
+.h2{font-size:27px;font-weight:800;margin:0 0 8px}
+.h2sub{color:var(--muted);max-width:620px;margin:0 auto 26px;font-size:15px}
+.trust{border-top:1px solid var(--line);margin-top:46px;padding:24px 0 0;text-align:center;color:var(--muted);font-size:13.5px}
+.trust b{color:var(--txt)}
+.note{text-align:center;margin-top:10px;padding:16px;color:#6f96bd;font-size:12.5px}
+@media(max-width:820px){.tsteps{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <div class="logo">📡 Radar <b>Concessioni</b></div>
+  <div class="nav-cta">
+    <a class="btn btn-ghost btn-sm" href="#">EN</a>
+    <a class="btn btn-gold btn-sm" href="#">Abbonati</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="kicker">Come funziona · product tour</span>
+  <h1>Dal comune all'avviso,<br>in <span class="hl">3 mosse</span> 🔔</h1>
+  <p class="sub">Cerchi il tuo comune, attivi l'avviso e ricevi il dossier quando la gara apre. Nessuna Gazzetta da spulciare a mano.</p>
+</div></header>
+
+<section class="tour"><div class="wrap">
+  <div class="tsteps">
+
+    <!-- STEP 1 -->
+    <div class="tstep">
+      <div class="bignum">1</div>
+      <h3>🔎 Cerca il tuo comune</h3>
+      <p>Scrivi il nome del comune e vedi subito lo stato della gara. 59 comuni costieri monitorati in tutta Italia.</p>
+      <div class="mini">
+        <div class="m-search">
+          <span class="ico">🔍</span>
+          <span class="val">Rimini</span>
+          <span class="cur"></span>
+        </div>
+        <div class="m-hint">Più cercati: Cervia · Jesolo · Taggia</div>
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="tstep">
+      <div class="bignum">2</div>
+      <h3>🔔 Attiva l'avviso</h3>
+      <p>Lascia la tua email e accendi l'avviso. Ti scriviamo appena la gara del tuo comune si apre o cambia.</p>
+      <div class="mini">
+        <div class="m-row">
+          <span class="lbl">Avvisi via email</span>
+          <span class="toggle"><span class="knob"></span></span>
+        </div>
+        <div class="m-email">
+          <span class="ico">✉️</span>
+          <span class="addr">mario.rossi@email.it</span>
+          <span class="ok">ATTIVO</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="tstep">
+      <div class="bignum">3</div>
+      <h3>📄 Ricevi il dossier</h3>
+      <p>Quando la gara apre ti arriva il dossier Pro: scadenze, criteri e link ai documenti ufficiali.</p>
+      <div class="mini">
+        <div class="m-doc">
+          <span class="badge">🟢 Aperta · scade 10/09</span>
+          <div class="title">Gara Rimini (RN)</div>
+          <div class="line">📅 Offerte entro il <b>10/09/2026</b></div>
+          <div class="line">⚖️ Criterio <b>OEPV 90/10</b> · 27 lotti</div>
+          <div class="line">📎 Documenti ufficiali allegati</div>
+          <div class="bar"><i></i></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="recap">
+    <div class="txt"><b>Tu non controlli niente.</b> Radar Concessioni guarda gli albi pretori e le Gazzette ogni mattina e ti avvisa solo quando serve davvero.</div>
+    <a class="btn btn-primary btn-lg" href="#">Provalo ora, gratis</a>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">59</div><div class="l">Comuni monitorati</div></div>
+    <div class="stat"><div class="n">3</div><div class="l">Gare aperte ora</div></div>
+    <div class="stat"><div class="n">📧</div><div class="l">Avvisi email</div></div>
+    <div class="stat"><div class="n">📄</div><div class="l">Dossier Pro</div></div>
+  </div>
+
+  <div class="trust">Fonti pubbliche ufficiali — <b>Gazzetta Ufficiale</b>, albi pretori, portali appalti — con link diretto. Verifica umana ogni mattina.</div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <div class="h2">Pronto a non perdere più una gara?</div>
+  <div class="h2sub">Il primo contenuto è gratis, per vedere come funziona. La gara esempio di Rimini scade il 10/09/2026: tu lo sapresti già.</div>
+  <a class="btn btn-gold btn-lg" href="#">Provalo ora, gratis</a>
+</div></section>
+
+<div class="note">PROPOSTA 18 — "Dal comune all'avviso, in 3 mosse" · product tour. Mockup statico, dati d'esempio. Palette e modello reali di Radar Concessioni.</div>
+</body>
+</html>

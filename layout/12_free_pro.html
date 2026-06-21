@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Proposta 12 — Gratis per capire, Pro per agire · Radar Concessioni</title>
+<style>
+:root{--bg:#0a2540;--panel:#0e2c4d;--panel2:#143a5e;--line:#1c3a5a;--txt:#eaf2fb;--muted:#9cc4e6;--accent:#f59e0b;--open:#22c55e;--prep:#fbbf24;--closed:#64748b;--gold:#fbbf24;--danger:#ef4444}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+a{color:var(--accent);text-decoration:none}
+.btn{cursor:pointer;border:none;border-radius:10px;padding:12px 20px;font-size:15px;font-weight:700;font-family:inherit}
+.btn-primary{background:var(--accent);color:#1a1206}
+.btn-gold{background:var(--gold);color:#1a1206}
+.btn-ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+.btn-sm{padding:8px 13px;font-size:13px}
+.btn-block{width:100%;text-align:center;display:block}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(10,37,64,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-weight:850;font-size:18px;letter-spacing:-.3px}.logo b{color:var(--accent)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+/* hero */
+.hero{padding:72px 0 30px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% -10%,rgba(245,158,11,.16),transparent 60%);pointer-events:none}
+.kicker{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--accent);background:rgba(245,158,11,.1);border:1px solid rgba(245,158,11,.3);padding:5px 12px;border-radius:20px;margin-bottom:20px}
+.hero h1{font-size:clamp(30px,5.4vw,50px);line-height:1.08;margin:0 0 14px;font-weight:850;letter-spacing:-.8px}
+.hero h1 .hl{color:var(--accent)}
+.hero p.sub{font-size:clamp(15px,2.2vw,19px);color:var(--muted);max-width:640px;margin:0 auto 0}
+/* stats strip */
+.stats{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-top:38px;position:relative;z-index:2}
+.stat .n{font-size:32px;font-weight:850;color:var(--accent)}
+.stat .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+/* compare table */
+section.block{padding:54px 0;border-top:1px solid var(--line)}
+.h2{font-size:27px;font-weight:800;text-align:center;margin:0 0 8px}
+.h2sub{color:var(--muted);text-align:center;max-width:620px;margin:0 auto 34px;font-size:15px}
+.compare{max-width:880px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr;background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.compare .cell{padding:16px 18px;border-bottom:1px solid var(--line);font-size:14.5px;display:flex;align-items:center}
+.compare .feat{color:var(--txt)}
+.compare .val{justify-content:center;font-weight:800}
+.compare .head{padding:22px 18px;text-align:center;display:block}
+.compare .head .plan{font-size:18px;font-weight:850;margin-bottom:4px}
+.compare .head .price{font-size:13px;color:var(--muted);line-height:1.5}
+.compare .head .price b{color:var(--txt)}
+.col-feat{grid-column:1}
+.col-pro{position:relative;background:linear-gradient(180deg,rgba(245,158,11,.10),rgba(245,158,11,.02));box-shadow:0 0 0 2px var(--accent) inset}
+.col-pro .head .plan{color:var(--accent)}
+.col-pro .ribbon{position:absolute;top:0;left:0;right:0;background:var(--accent);color:#1a1206;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:4px 0;text-align:center}
+.col-pro .head{padding-top:34px}
+.yes{color:#86efac}.no{color:#5f7e9e}
+.cta-row .cell{border-bottom:none;padding:20px 18px}
+.reassure{max-width:880px;margin:18px auto 0;text-align:center;background:rgba(245,158,11,.07);border:1px dashed rgba(245,158,11,.4);border-radius:12px;padding:14px 18px;color:var(--muted);font-size:13.5px}
+.reassure b{color:var(--txt)}
+/* example */
+.example{max-width:880px;margin:0 auto;background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--open);box-shadow:0 0 0 1px var(--open) inset;border-radius:16px;padding:22px 24px}
+.example .top{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.badge{font-size:11px;font-weight:800;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:.4px}
+.badge.A{background:rgba(34,197,94,.16);color:#86efac;border:1px solid rgba(34,197,94,.4)}
+.example h3{margin:0;font-size:22px}
+.example .meta{color:var(--muted);font-size:14px;line-height:1.7}
+.example .meta b{color:var(--txt)}
+.locked{filter:blur(4px);user-select:none}
+.trust{border-top:1px solid var(--line);margin-top:50px;padding:26px 0;text-align:center;color:var(--muted);font-size:13.5px}
+.trust b{color:var(--txt)}
+.note{text-align:center;margin-top:60px;padding:16px;color:#6f96bd;font-size:12.5px}
+@media(max-width:760px){.compare{grid-template-columns:1fr;border:none;background:transparent}.compare .col-feat .feat{font-weight:700}.col-pro{box-shadow:none;border:2px solid var(--accent);border-radius:14px;margin-top:14px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <div class="logo">📡 Radar <b>Concessioni</b></div>
+  <div class="nav-cta">
+    <a class="btn btn-ghost btn-sm" href="#">EN</a>
+    <a class="btn btn-gold btn-sm" href="#">Abbonati</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="kicker">Riforma Bolkestein · gare 2026</span>
+  <h1>Gratis per <span class="hl">capire</span>,<br>Pro per <span class="hl">agire</span>.</h1>
+  <p class="sub">Con il piano gratuito vedi subito se la gara della tua spiaggia è aperta e lo stato di tutti i comuni. Con Radar Pro hai scadenze esatte, criteri di punteggio, link ufficiali e avvisi su misura.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="n">59</div><div class="l">Comuni monitorati</div></div>
+    <div class="stat"><div class="n">3</div><div class="l">Gare aperte ora</div></div>
+    <div class="stat"><div class="n">15</div><div class="l">Regioni coperte</div></div>
+  </div>
+</div></header>
+
+<section class="block"><div class="wrap">
+  <div class="h2">Free o Pro: scegli quanto in profondità</div>
+  <div class="h2sub">Stesso radar, due livelli. Il piano gratuito ti fa vedere come funziona; il Pro ti dà tutto quello che serve per partecipare davvero.</div>
+
+  <div class="compare">
+    <!-- header row -->
+    <div class="cell head col-feat"></div>
+    <div class="cell head">
+      <div class="plan">Free</div>
+      <div class="price"><b>Gratuito</b><br>nessuna carta richiesta</div>
+    </div>
+    <div class="cell head col-pro">
+      <div class="ribbon">Consigliato</div>
+      <div class="plan">Radar Pro 💎</div>
+      <div class="price"><b>€500 una tantum</b><br>+ €100/mese</div>
+    </div>
+
+    <!-- feature rows -->
+    <div class="cell feat col-feat">Vedere se la gara è aperta</div>
+    <div class="cell val"><span class="yes">✓</span></div>
+    <div class="cell val col-pro"><span class="yes">✓</span></div>
+
+    <div class="cell feat col-feat">Stato e mappa di tutti i comuni</div>
+    <div class="cell val"><span class="yes">✓</span></div>
+    <div class="cell val col-pro"><span class="yes">✓</span></div>
+
+    <div class="cell feat col-feat">Scadenze esatte (data e ora)</div>
+    <div class="cell val"><span class="no">✗</span></div>
+    <div class="cell val col-pro"><span class="yes">✓</span></div>
+
+    <div class="cell feat col-feat">Criteri di punteggio e link ai documenti</div>
+    <div class="cell val"><span class="no">✗</span></div>
+    <div class="cell val col-pro"><span class="yes">✓</span></div>
+
+    <div class="cell feat col-feat">Avvisi email sui tuoi comuni</div>
+    <div class="cell val"><span class="no">✗</span></div>
+    <div class="cell val col-pro"><span class="yes">✓</span></div>
+
+    <div class="cell feat col-feat">Dossier su misura / investitore</div>
+    <div class="cell val"><span class="no">✗</span></div>
+    <div class="cell val col-pro"><span class="yes">✓</span></div>
+
+    <!-- CTA row -->
+    <div class="cell col-feat cta-row"></div>
+    <div class="cell cta-row"><a class="btn btn-ghost btn-block" href="#">Inizia gratis</a></div>
+    <div class="cell cta-row col-pro"><a class="btn btn-primary btn-block" href="#">Passa a Pro</a></div>
+  </div>
+
+  <div class="reassure">🔓 <b>Il primo contenuto è gratis</b> per vedere come funziona. Nessuna carta richiesta. Passi a Pro solo quando ti serve agire.</div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <div class="h2">Quello che vedi gratis, quello che sblocchi con Pro</div>
+  <div class="h2sub">Esempio reale: la gara di Rimini, aperta in questo momento.</div>
+
+  <div class="example">
+    <div class="top"><span class="badge A">🟢 Gara aperta</span><h3>Rimini <small style="color:var(--muted);font-weight:600">(RN)</small></h3></div>
+    <div class="meta"><b>Free:</b> sai che la gara è <b>aperta</b> e dove si trova sulla mappa dei 59 comuni.</div>
+    <div class="meta"><b>Pro:</b> offerte entro il <b>10/09/2026</b> · criterio <span class="locked">OEPV 90/10</span> · base d'asta <span class="locked">€986.545</span> · durata <span class="locked">12 anni</span> · link al bando ufficiale <span class="locked">in Gazzetta</span> · avviso email se cambia qualcosa.</div>
+  </div>
+
+  <div class="trust">Fonti pubbliche ufficiali — <b>Gazzetta Ufficiale</b>, albi pretori, portali appalti — con link diretto. Verifica umana ogni mattina.</div>
+</div></section>
+
+<div class="note">PROPOSTA 12 — “Gratis per capire, Pro per agire” · pricing/confronto. Mockup statico, dati d'esempio. Palette e modello reali di Radar Concessioni.</div>
+</body>
+</html>

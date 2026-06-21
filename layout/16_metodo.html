@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Proposta 16 — Come verifichiamo ogni dato · Radar Concessioni</title>
+<style>
+:root{--bg:#0a2540;--panel:#0e2c4d;--panel2:#143a5e;--line:#1c3a5a;--txt:#eaf2fb;--muted:#9cc4e6;--accent:#2dd4bf;--open:#22c55e;--prep:#fbbf24;--closed:#64748b;--gold:#fbbf24;--danger:#ef4444}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+a{color:var(--accent);text-decoration:none}
+.btn{cursor:pointer;border:none;border-radius:10px;padding:12px 20px;font-size:15px;font-weight:700;font-family:inherit}
+.btn-primary{background:var(--accent);color:#06151b}
+.btn-gold{background:var(--gold);color:#1a1206}
+.btn-ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+.btn-sm{padding:8px 13px;font-size:13px}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(10,37,64,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-weight:850;font-size:18px;letter-spacing:-.3px}.logo b{color:var(--accent)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+/* hero */
+.hero{padding:72px 0 44px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% -10%,rgba(45,212,191,.16),transparent 60%);pointer-events:none}
+.kicker{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--accent);background:rgba(45,212,191,.1);border:1px solid rgba(45,212,191,.3);padding:5px 12px;border-radius:20px;margin-bottom:20px}
+.hero h1{font-size:clamp(30px,5.4vw,50px);line-height:1.08;margin:0 0 14px;font-weight:850;letter-spacing:-.8px;position:relative;z-index:2}
+.hero h1 .hl{color:var(--accent)}
+.hero p.sub{font-size:clamp(15px,2.2vw,19px);color:var(--muted);max-width:640px;margin:0 auto 30px;position:relative;z-index:2}
+.hero-cta{position:relative;z-index:2;display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+/* stats strip */
+.stats{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-top:46px;position:relative;z-index:2}
+.stat .n{font-size:32px;font-weight:850;color:var(--accent)}
+.stat .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+/* trust */
+.trust{border-top:1px solid var(--line);margin-top:48px;padding:26px 0;text-align:center;color:var(--muted);font-size:13.5px}
+.trust b{color:var(--txt)}
+section.block{padding:54px 0;border-top:1px solid var(--line)}
+.h2{font-size:27px;font-weight:800;text-align:center;margin:0 0 8px}
+.h2sub{color:var(--muted);text-align:center;max-width:640px;margin:0 auto 38px;font-size:15px}
+/* processo steps */
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:920px;margin:0 auto}
+.step{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px 24px 20px}
+.step .num{width:38px;height:38px;border-radius:11px;background:rgba(45,212,191,.14);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:850;font-size:17px;margin-bottom:14px}
+.step h4{margin:0 0 6px;font-size:17px}.step h4 .ic{margin-right:7px}
+.step p{margin:0 0 14px;color:var(--muted);font-size:14px;line-height:1.6}
+.vbadge{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:800;letter-spacing:.3px;color:#86efac;background:rgba(34,197,94,.13);border:1px solid rgba(34,197,94,.38);padding:5px 11px;border-radius:20px}
+/* fonti chips */
+.fonti{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:820px;margin:0 auto}
+.fonte{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:14px;padding:20px 22px;display:flex;gap:14px;align-items:flex-start}
+.fonte .fic{font-size:26px;line-height:1}
+.fonte h5{margin:0 0 4px;font-size:15.5px}
+.fonte p{margin:0;color:var(--muted);font-size:13px;line-height:1.55}
+/* cta band */
+.ctaband{text-align:center;background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:18px;padding:36px 24px;max-width:760px;margin:0 auto;box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.ctaband h3{margin:0 0 8px;font-size:22px}
+.ctaband p{margin:0 0 20px;color:var(--muted);font-size:14.5px}
+.note{text-align:center;margin-top:60px;padding:16px;color:#6f96bd;font-size:12.5px}
+@media(max-width:760px){.steps,.fonti{grid-template-columns:1fr}.hero-cta .btn{width:100%}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <div class="logo">📡 Radar <b>Concessioni</b></div>
+  <div class="nav-cta">
+    <a class="btn btn-ghost btn-sm" href="#">EN</a>
+    <a class="btn btn-gold btn-sm" href="#">Abbonati</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="kicker">Come lavoriamo · metodo</span>
+  <h1>Niente scraping alla cieca:<br>ogni gara è <span class="hl">verificata alla fonte</span>, a mano, ogni mattina</h1>
+  <p class="sub">Sui bandi delle concessioni balneari un dato sbagliato ti costa la spiaggia. Per questo ogni scadenza che leggi su Radar passa da una persona, non solo da un algoritmo.</p>
+  <div class="hero-cta">
+    <a class="btn btn-primary" href="#">Vedi una gara verificata</a>
+    <a class="btn btn-ghost" href="#">Come funziona</a>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">637</div><div class="l">Comuni costieri</div></div>
+    <div class="stat"><div class="n">59</div><div class="l">Monitorati ora</div></div>
+    <div class="stat"><div class="n">1×</div><div class="l">Verifica umana al giorno</div></div>
+  </div>
+
+  <div class="trust">Fonti pubbliche ufficiali — <b>Gazzetta Ufficiale</b>, albi pretori comunali, portali appalti — con link diretto al documento. Verifica umana ogni mattina.</div>
+</div></header>
+
+<section class="block"><div class="wrap">
+  <div class="h2">Il nostro processo, in 4 passi</div>
+  <div class="h2sub">Lo stesso percorso per ogni bando, dalla pubblicazione alla notifica. Nessuna scorciatoia.</div>
+  <div class="steps">
+
+    <div class="step">
+      <div class="num">1</div>
+      <h4><span class="ic">🏛️</span>Fonte ufficiale</h4>
+      <p>Partiamo solo da dove il bando esiste davvero: Gazzetta Ufficiale, albo pretorio del Comune, portale appalti. Mai da voci o aggregatori di seconda mano.</p>
+      <span class="vbadge">✓ verificato alla fonte</span>
+    </div>
+
+    <div class="step">
+      <div class="num">2</div>
+      <h4><span class="ic">👁️</span>Lettura umana del bando</h4>
+      <p>Una persona apre il documento e legge: criterio di aggiudicazione, durata, base d'asta, lotti, requisiti. Quello che un crawler non distingue, noi sì.</p>
+      <span class="vbadge">✓ verificato alla fonte</span>
+    </div>
+
+    <div class="step">
+      <div class="num">3</div>
+      <h4><span class="ic">📄</span>Data certa + link diretto</h4>
+      <p>Registriamo la scadenza esatta (giorno e ora) e alleghiamo il link diretto al documento ufficiale. Puoi controllare la fonte con un clic.</p>
+      <span class="vbadge">✓ verificato alla fonte</span>
+    </div>
+
+    <div class="step">
+      <div class="num">4</div>
+      <h4><span class="ic">📬</span>Notifica agli iscritti</h4>
+      <p>Solo dopo la verifica facciamo partire l'avviso. Con <b>Radar Pro</b> ricevi una email appena la tua gara apre o cambia stato.</p>
+      <span class="vbadge">✓ verificato alla fonte</span>
+    </div>
+
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <div class="h2">Le nostre fonti</div>
+  <div class="h2sub">Pubbliche, ufficiali, citate. Ogni dato che vedi nasce da uno di questi canali.</div>
+  <div class="fonti">
+    <div class="fonte"><div class="fic">📰</div><div><h5>Gazzetta Ufficiale</h5><p>Pubblicazioni e avvisi a rilevanza nazionale per le gare ad evidenza pubblica.</p></div></div>
+    <div class="fonte"><div class="fic">🏛️</div><div><h5>Albi pretori comunali</h5><p>Bandi e avvisi pubblicati dai 637 Comuni costieri sui rispettivi albi online.</p></div></div>
+    <div class="fonte"><div class="fic">🗂️</div><div><h5>Portali appalti</h5><p>Piattaforme di e-procurement dove vengono pubblicati gli atti di gara.</p></div></div>
+    <div class="fonte"><div class="fic">📑</div><div><h5>Delibere e determine</h5><p>Atti di indirizzo e proroga che anticipano o modificano le procedure di gara.</p></div></div>
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <div class="ctaband">
+    <h3>Vuoi vedere com'è fatta una scheda verificata?</h3>
+    <p>Apri una gara reale: fonte, data certa, link al documento e badge di verifica. Tutto come lo trovi dentro Radar Pro.</p>
+    <a class="btn btn-primary" href="#">Vedi una gara verificata</a>
+  </div>
+</div></section>
+
+<div class="note">PROPOSTA 16 — “Come verifichiamo ogni dato” · fiducia/metodo. Mockup statico, dati d'esempio. Palette e modello reali di Radar Concessioni.</div>
+</body>
+</html>

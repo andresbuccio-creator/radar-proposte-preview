@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Proposta 11 — Parti dalla tua regione · Radar Concessioni</title>
+<style>
+:root{--bg:#0a2540;--panel:#0e2c4d;--panel2:#143a5e;--line:#1c3a5a;--txt:#eaf2fb;--muted:#9cc4e6;--accent:#38bdf8;--open:#22c55e;--prep:#fbbf24;--closed:#64748b;--gold:#fbbf24;--danger:#ef4444}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+a{color:var(--accent);text-decoration:none}
+.btn{cursor:pointer;border:none;border-radius:10px;padding:12px 20px;font-size:15px;font-weight:700;font-family:inherit}
+.btn-primary{background:var(--accent);color:#06151b}
+.btn-gold{background:var(--gold);color:#1a1206}
+.btn-ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+.btn-sm{padding:8px 13px;font-size:13px}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(10,37,64,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-weight:850;font-size:18px;letter-spacing:-.3px}.logo b{color:var(--accent)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+/* hero */
+.hero{padding:72px 0 30px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% -10%,rgba(56,189,248,.16),transparent 60%);pointer-events:none}
+.kicker{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--accent);background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.3);padding:5px 12px;border-radius:20px;margin-bottom:20px}
+.hero h1{font-size:clamp(30px,5.4vw,50px);line-height:1.08;margin:0 0 14px;font-weight:850;letter-spacing:-.8px}
+.hero h1 .hl{color:var(--accent)}
+.hero p.sub{font-size:clamp(15px,2.2vw,19px);color:var(--muted);max-width:600px;margin:0 auto 34px}
+/* stats strip */
+.stats{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-top:8px;position:relative;z-index:2}
+.stat .n{font-size:32px;font-weight:850;color:var(--accent)}
+.stat .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+/* region grid */
+.regions{position:relative;z-index:2;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:980px;margin:46px auto 0;text-align:left}
+.region{display:block;background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:14px;padding:18px 18px 16px;transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease;position:relative;overflow:hidden}
+.region::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent);opacity:.55;transition:opacity .15s ease}
+.region:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 18px 40px rgba(0,0,0,.4)}
+.region:hover::before{opacity:1}
+.region .rtop{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.region .rname{font-size:16px;font-weight:850;letter-spacing:-.2px}
+.region .dot{width:10px;height:10px;border-radius:50%;flex:none}
+.dot.open{background:var(--open);box-shadow:0 0 0 4px rgba(34,197,94,.18)}
+.dot.prep{background:var(--prep);box-shadow:0 0 0 4px rgba(251,191,36,.16)}
+.dot.closed{background:var(--closed);box-shadow:0 0 0 4px rgba(100,116,139,.18)}
+.region .rmeta{color:var(--muted);font-size:13px;line-height:1.6}
+.region .rmeta b{color:var(--txt)}
+.region .rtag{display:inline-block;margin-top:11px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;padding:3px 10px;border-radius:20px}
+.rtag.open{background:rgba(34,197,94,.16);color:#86efac;border:1px solid rgba(34,197,94,.4)}
+.rtag.prep{background:rgba(251,191,36,.14);color:#fcd34d;border:1px solid rgba(251,191,36,.4)}
+.rtag.closed{background:rgba(100,116,139,.16);color:#cbd5e1;border:1px solid rgba(100,116,139,.4)}
+/* trust */
+.trust{border-top:1px solid var(--line);margin-top:50px;padding:26px 0;text-align:center;color:var(--muted);font-size:13.5px}
+.trust b{color:var(--txt)}
+section.block{padding:54px 0;border-top:1px solid var(--line)}
+.h2{font-size:27px;font-weight:800;text-align:center;margin:0 0 8px}
+.h2sub{color:var(--muted);text-align:center;max-width:620px;margin:0 auto 34px;font-size:15px}
+.steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;max-width:900px;margin:0 auto}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
+.step .num{width:34px;height:34px;border-radius:10px;background:rgba(56,189,248,.14);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:850;margin-bottom:12px}
+.step h4{margin:0 0 6px;font-size:16px}.step p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.6}
+.ctawrap{text-align:center;margin-top:36px}
+.note{text-align:center;margin-top:60px;padding:16px;color:#6f96bd;font-size:12.5px}
+@media(max-width:980px){.regions{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:760px){.steps{grid-template-columns:1fr}.regions{grid-template-columns:1fr 1fr}.stats{gap:26px}}
+@media(max-width:460px){.regions{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <div class="logo">📡 Radar <b>Concessioni</b></div>
+  <div class="nav-cta">
+    <a class="btn btn-ghost btn-sm" href="#">EN</a>
+    <a class="btn btn-gold btn-sm" href="#">Abbonati</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="kicker">Riforma Bolkestein · gare 2026</span>
+  <h1>Parti dalla <span class="hl">tua regione</span> 🧭</h1>
+  <p class="sub">Scegli la regione costiera che ti interessa: vedi subito quanti comuni monitoriamo e quante gare sono aperte in questo momento.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="n">15</div><div class="l">Regioni coperte</div></div>
+    <div class="stat"><div class="n">59</div><div class="l">Comuni monitorati</div></div>
+    <div class="stat"><div class="n">3</div><div class="l">Gare aperte ora</div></div>
+    <div class="stat"><div class="n">637</div><div class="l">Comuni costieri</div></div>
+  </div>
+
+  <!-- GRIGLIA TESSERE REGIONE -->
+  <div class="regions">
+    <a class="region" href="#">
+      <div class="rtop"><span class="rname">Liguria</span><span class="dot open" title="Gare aperte"></span></div>
+      <div class="rmeta">Liguria · <b>14 comuni</b> · 2 aperte</div>
+      <span class="rtag open">🟢 2 aperte</span>
+    </a>
+    <a class="region" href="#">
+      <div class="rtop"><span class="rname">Emilia-Romagna</span><span class="dot open" title="Gara aperta"></span></div>
+      <div class="rmeta">Emilia-Romagna · <b>8 comuni</b> · 1 aperta</div>
+      <span class="rtag open">🟢 1 aperta</span>
+    </a>
+    <a class="region" href="#">
+      <div class="rtop"><span class="rname">Toscana</span><span class="dot prep" title="In preparazione"></span></div>
+      <div class="rmeta">Toscana · <b>9 comuni</b> · 0 aperte</div>
+      <span class="rtag prep">🟡 3 in apertura</span>
+    </a>
+    <a class="region" href="#">
+      <div class="rtop"><span class="rname">Lazio</span><span class="dot prep" title="In preparazione"></span></div>
+      <div class="rmeta">Lazio · <b>6 comuni</b> · 0 aperte</div>
+      <span class="rtag prep">🟡 2 in apertura</span>
+    </a>
+    <a class="region" href="#">
+      <div class="rtop"><span class="rname">Veneto</span><span class="dot prep" title="In preparazione"></span></div>
+      <div class="rmeta">Veneto · <b>5 comuni</b> · 0 aperte</div>
+      <span class="rtag prep">🟡 1 in apertura</span>
+    </a>
+    <a class="region" href="#">
+      <div class="rtop"><span class="rname">Campania</span><span class="dot closed" title="Nessuna gara aperta"></span></div>
+      <div class="rmeta">Campania · <b>4 comuni</b> · 0 aperte</div>
+      <span class="rtag closed">⚪ monitorata</span>
+    </a>
+    <a class="region" href="#">
+      <div class="rtop"><span class="rname">Puglia</span><span class="dot prep" title="In preparazione"></span></div>
+      <div class="rmeta">Puglia · <b>4 comuni</b> · 0 aperte</div>
+      <span class="rtag prep">🟡 1 in apertura</span>
+    </a>
+    <a class="region" href="#">
+      <div class="rtop"><span class="rname">Sicilia</span><span class="dot closed" title="Nessuna gara aperta"></span></div>
+      <div class="rmeta">Sicilia · <b>3 comuni</b> · 0 aperte</div>
+      <span class="rtag closed">⚪ monitorata</span>
+    </a>
+    <a class="region" href="#">
+      <div class="rtop"><span class="rname">Marche</span><span class="dot closed" title="Nessuna gara aperta"></span></div>
+      <div class="rmeta">Marche · <b>2 comuni</b> · 0 aperte</div>
+      <span class="rtag closed">⚪ monitorata</span>
+    </a>
+    <a class="region" href="#">
+      <div class="rtop"><span class="rname">Abruzzo</span><span class="dot closed" title="Nessuna gara aperta"></span></div>
+      <div class="rmeta">Abruzzo · <b>2 comuni</b> · 0 aperte</div>
+      <span class="rtag closed">⚪ monitorata</span>
+    </a>
+    <a class="region" href="#">
+      <div class="rtop"><span class="rname">Calabria</span><span class="dot closed" title="Nessuna gara aperta"></span></div>
+      <div class="rmeta">Calabria · <b>1 comune</b> · 0 aperte</div>
+      <span class="rtag closed">⚪ monitorata</span>
+    </a>
+    <a class="region" href="#">
+      <div class="rtop"><span class="rname">Friuli-Venezia Giulia</span><span class="dot closed" title="Nessuna gara aperta"></span></div>
+      <div class="rmeta">Friuli-V.G. · <b>1 comune</b> · 0 aperte</div>
+      <span class="rtag closed">⚪ monitorata</span>
+    </a>
+  </div>
+
+  <div class="trust">Conteggi d'esempio aggiornati da <b>fonti pubbliche ufficiali</b> — Gazzetta Ufficiale, albi pretori, portali appalti — con verifica umana ogni mattina.</div>
+</div></header>
+
+<section class="block"><div class="wrap">
+  <div class="h2">Come funziona, in tre passi</div>
+  <div class="h2sub">Dalla regione al primo avviso utile, senza giornate perse tra Gazzette e albi pretori.</div>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><h4>🧭 Scegli la regione</h4><p>Apri la tessera della tua regione costiera e parti dal quadro d'insieme.</p></div>
+    <div class="step"><div class="num">2</div><h4>🏖️ Vedi i comuni e lo stato</h4><p>L'elenco dei comuni monitorati con lo stato di ogni gara: aperta, in apertura o conclusa.</p></div>
+    <div class="step"><div class="num">3</div><h4>⏰ Attiva gli avvisi</h4><p>Ricevi l'email appena una gara apre o cambia scadenza, con il link al documento ufficiale.</p></div>
+  </div>
+  <div class="ctawrap">
+    <a class="btn btn-primary" href="#">Apri il radar</a>
+    <div style="margin-top:14px;color:var(--muted);font-size:13px">Radar Pro — <b style="color:var(--txt)">€500</b> una tantum <b style="color:var(--txt)">+ €100/mese</b></div>
+  </div>
+</div></section>
+
+<div class="note">PROPOSTA 11 — “Parti dalla tua regione” · ingresso geografico. Mockup statico, dati d'esempio. Palette e modello reali di Radar Concessioni.</div>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Proposta 8 — Te lo diciamo noi, prima di tutti · Radar Concessioni</title>
+<style>
+:root{--bg:#0a2540;--panel:#0e2c4d;--panel2:#143a5e;--line:#1c3a5a;--txt:#eaf2fb;--muted:#9cc4e6;--accent:#34d399;--open:#22c55e;--prep:#fbbf24;--closed:#64748b;--gold:#fbbf24;--danger:#ef4444}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+a{color:var(--accent);text-decoration:none}
+.btn{cursor:pointer;border:none;border-radius:10px;padding:12px 20px;font-size:15px;font-weight:700;font-family:inherit}
+.btn-primary{background:var(--accent);color:#06201a}
+.btn-gold{background:var(--gold);color:#1a1206}
+.btn-ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+.btn-sm{padding:8px 13px;font-size:13px}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(10,37,64,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-weight:850;font-size:18px;letter-spacing:-.3px}.logo b{color:var(--accent)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+/* hero */
+.hero{padding:72px 0 30px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% -10%,rgba(52,211,153,.16),transparent 60%);pointer-events:none}
+.kicker{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--accent);background:rgba(52,211,153,.1);border:1px solid rgba(52,211,153,.3);padding:5px 12px;border-radius:20px;margin-bottom:20px}
+.hero h1{font-size:clamp(30px,5.4vw,50px);line-height:1.08;margin:0 0 14px;font-weight:850;letter-spacing:-.8px}
+.hero h1 .hl{color:var(--accent)}
+.hero p.sub{font-size:clamp(15px,2.2vw,19px);color:var(--muted);max-width:600px;margin:0 auto 34px}
+/* email signup */
+.signup{position:relative;z-index:2;max-width:560px;margin:0 auto;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:10px;display:flex;gap:8px;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.signup input{flex:1;background:transparent;border:none;color:var(--txt);font-size:17px;padding:14px 16px;font-family:inherit;outline:none}
+.signup input::placeholder{color:#5f86ad}
+.micro{position:relative;z-index:2;margin:14px auto 0;font-size:13px;color:var(--muted)}
+.micro b{color:var(--accent)}
+/* email mockup */
+.mailcard{position:relative;z-index:2;max-width:580px;margin:38px auto 0;text-align:left;background:#fff;color:#1b2733;border-radius:16px;overflow:hidden;box-shadow:0 26px 70px rgba(0,0,0,.5)}
+.mail-bar{display:flex;align-items:center;gap:10px;padding:13px 18px;border-bottom:1px solid #e6ebf1;background:#f6f9fc}
+.mail-av{width:38px;height:38px;border-radius:50%;background:var(--accent);color:#06201a;display:flex;align-items:center;justify-content:center;font-size:18px;flex:none}
+.mail-from{font-size:13.5px;line-height:1.4}
+.mail-from b{display:block;color:#0e1e30;font-weight:800}
+.mail-from span{color:#6b7a8c;font-size:12.5px}
+.mail-time{margin-left:auto;color:#9aa7b4;font-size:12px;white-space:nowrap}
+.mail-body{padding:20px 20px 22px}
+.mail-subj{font-size:18px;font-weight:850;color:#0e1e30;margin:0 0 12px;letter-spacing:-.3px}
+.mail-body p{margin:0 0 10px;font-size:14.5px;line-height:1.6;color:#3a4a5a}
+.mail-body p b{color:#0e1e30}
+.mail-cd{display:inline-flex;gap:8px;background:#fff4f4;border:1px solid #f3c6c6;border-radius:10px;padding:8px 12px;margin:4px 0 14px}
+.mail-cd b{color:#d24545;font-size:15px}
+.mail-btn{display:inline-block;background:var(--accent);color:#06201a;font-weight:800;font-size:14px;padding:11px 22px;border-radius:9px}
+.mail-foot{padding:12px 20px;border-top:1px solid #eef2f6;color:#9aa7b4;font-size:11.5px}
+/* stats */
+.stats{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-top:46px;position:relative;z-index:2}
+.stat .n{font-size:32px;font-weight:850;color:var(--accent)}
+.stat .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+/* trust */
+.trust{border-top:1px solid var(--line);margin-top:50px;padding:26px 0;text-align:center;color:var(--muted);font-size:13.5px}
+.trust b{color:var(--txt)}
+section.block{padding:54px 0;border-top:1px solid var(--line)}
+.h2{font-size:27px;font-weight:800;text-align:center;margin:0 0 8px}
+.h2sub{color:var(--muted);text-align:center;max-width:620px;margin:0 auto 34px;font-size:15px}
+.steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;max-width:900px;margin:0 auto}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
+.step .num{width:34px;height:34px;border-radius:10px;background:rgba(52,211,153,.14);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:850;margin-bottom:12px}
+.step h4{margin:0 0 6px;font-size:16px}.step p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.6}
+/* quiet band */
+.quiet{max-width:760px;margin:36px auto 0;background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:16px;padding:26px 28px;text-align:center}
+.quiet h3{margin:0 0 8px;font-size:20px}
+.quiet p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.6}
+.quiet .pill{display:inline-block;margin:14px 6px 0;background:var(--panel2);border:1px solid var(--line);color:var(--txt);font-size:13px;padding:7px 13px;border-radius:20px}
+.price{text-align:center;margin-top:30px;color:var(--muted);font-size:14px}
+.price b{color:var(--txt)}
+.note{text-align:center;margin-top:60px;padding:16px;color:#6f96bd;font-size:12.5px}
+@media(max-width:760px){.steps{grid-template-columns:1fr}.signup{flex-direction:column}.signup .btn{width:100%}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <div class="logo">📡 Radar <b>Concessioni</b></div>
+  <div class="nav-cta">
+    <a class="btn btn-ghost btn-sm" href="#">EN</a>
+    <a class="btn btn-gold btn-sm" href="#">Abbonati</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="kicker">📨 Avviso email · gare Bolkestein 2026</span>
+  <h1>Te lo diciamo <span class="hl">noi</span>,<br>prima di tutti.</h1>
+  <p class="sub">Scegli i tuoi comuni. Quando la gara apre, ricevi un'email. Niente da controllare, niente scadenze perse.</p>
+
+  <div class="signup">
+    <input type="email" placeholder="La tua email, es. mario@spiaggia.it">
+    <button class="btn btn-primary">Attiva l'avviso gratis</button>
+  </div>
+  <div class="micro">✓ <b>Gratis per il primo comune</b> · zero spam · disdici quando vuoi</div>
+
+  <!-- MOCKUP EMAIL RICEVUTA -->
+  <div class="mailcard">
+    <div class="mail-bar">
+      <div class="mail-av">📡</div>
+      <div class="mail-from">
+        <b>Radar Concessioni</b>
+        <span>avvisi@radarconcessioni.com</span>
+      </div>
+      <div class="mail-time">oggi · 07:14</div>
+    </div>
+    <div class="mail-body">
+      <p class="mail-subj">🟢 Gara aperta: Rimini — scade il 10/09</p>
+      <p>Ciao, è stato pubblicato il bando per le concessioni balneari di <b>Rimini (RN)</b>: 27 lotti sul Litorale Nord, criterio OEPV 90/10, base d'asta €986.545.</p>
+      <p>Le offerte vanno presentate entro il <b>10/09/2026, ore 13:00</b>.</p>
+      <div class="mail-cd">⏳ Mancano <b>&nbsp;81 giorni</b></div>
+      <p><a class="mail-btn" href="#">Apri la gara →</a></p>
+    </div>
+    <div class="mail-foot">Fonte: Gazzetta Ufficiale + albo pretorio del Comune · verificato a mano stamattina · Radar Concessioni</div>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">59</div><div class="l">Comuni monitorati</div></div>
+    <div class="stat"><div class="n">3</div><div class="l">Gare aperte ora</div></div>
+    <div class="stat"><div class="n">637</div><div class="l">Comuni costieri</div></div>
+  </div>
+
+  <div class="trust">Fonti pubbliche ufficiali — <b>Gazzetta Ufficiale</b>, albi pretori, portali appalti — con link diretto. Verifica umana ogni mattina, su <b>15 regioni</b>.</div>
+</div></header>
+
+<section class="block"><div class="wrap">
+  <div class="h2">Come funziona l'avviso</div>
+  <div class="h2sub">Tre passi e poi te ne dimentichi: al resto pensiamo noi.</div>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><h4>📍 Scegli i tuoi comuni</h4><p>Rimini, Cervia, Jesolo, Taggia, Pietra Ligure, Loano… seleziona solo le spiagge che ti interessano.</p></div>
+    <div class="step"><div class="num">2</div><h4>🔎 Monitoriamo le fonti</h4><p>Ogni mattina controlliamo Gazzetta Ufficiale, albi pretori e portali appalti. Con verifica umana.</p></div>
+    <div class="step"><div class="num">3</div><h4>📨 Ricevi l'email</h4><p>Appena la gara apre, arriva l'avviso con scadenza, criteri e link al bando ufficiale.</p></div>
+  </div>
+
+  <div class="quiet">
+    <h3>Zero rumore. Solo i comuni che ti interessano.</h3>
+    <p>Niente newsletter generiche, niente bollettini regionali da spulciare. Ricevi un'email solo quando succede qualcosa che riguarda <b>te</b>.</p>
+    <span class="pill">Rimini</span><span class="pill">Taggia</span><span class="pill">Pietra Ligure</span><span class="pill">Loano</span><span class="pill">Jesolo</span><span class="pill">Cervia</span>
+  </div>
+
+  <div class="price">Primo comune gratis. Tutti i comuni, scadenze esatte e documenti ufficiali con <b>Radar Pro</b> — <b>€500</b> una tantum + <b>€100/mese</b>.</div>
+</div></section>
+
+<div class="note">PROPOSTA 8 — “Te lo diciamo noi, prima di tutti” · avviso email. Mockup statico, dati d'esempio. Palette e modello reali di Radar Concessioni.</div>
+</body>
+</html>

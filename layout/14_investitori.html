@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Proposta 14 — Dove sta l'opportunità balneare · Radar Concessioni</title>
+<style>
+:root{--bg:#0a2540;--panel:#0e2c4d;--panel2:#143a5e;--line:#1c3a5a;--txt:#eaf2fb;--muted:#9cc4e6;--accent:#38bdf8;--open:#22c55e;--prep:#fbbf24;--closed:#64748b;--gold:#fbbf24;--danger:#ef4444}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+a{color:var(--accent);text-decoration:none}
+.btn{cursor:pointer;border:none;border-radius:10px;padding:12px 20px;font-size:15px;font-weight:700;font-family:inherit}
+.btn-primary{background:var(--accent);color:#06151b}
+.btn-gold{background:var(--gold);color:#1a1206}
+.btn-ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+.btn-sm{padding:8px 13px;font-size:13px}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(10,37,64,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-weight:850;font-size:18px;letter-spacing:-.3px}.logo b{color:var(--accent)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+/* hero */
+.hero{padding:72px 0 30px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% -10%,rgba(56,189,248,.16),transparent 60%);pointer-events:none}
+.kicker{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--accent);background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.3);padding:5px 12px;border-radius:20px;margin-bottom:20px}
+.hero h1{font-size:clamp(30px,5.4vw,50px);line-height:1.08;margin:0 0 14px;font-weight:850;letter-spacing:-.8px}
+.hero h1 .hl{color:var(--accent)}
+.hero p.sub{font-size:clamp(15px,2.2vw,19px);color:var(--muted);max-width:640px;margin:0 auto 34px}
+.hero-cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;z-index:2}
+/* stats strip */
+.stats{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-top:48px;position:relative;z-index:2}
+.stat .n{font-size:32px;font-weight:850;color:var(--accent)}
+.stat .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+/* trust */
+.trust{border-top:1px solid var(--line);margin-top:50px;padding:26px 0;text-align:center;color:var(--muted);font-size:13.5px}
+.trust b{color:var(--txt)}
+/* opportunity cards */
+section.block{padding:54px 0;border-top:1px solid var(--line)}
+.h2{font-size:27px;font-weight:800;text-align:center;margin:0 0 8px}
+.h2sub{color:var(--muted);text-align:center;max-width:640px;margin:0 auto 34px;font-size:15px}
+.cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;max-width:1000px;margin:0 auto}
+.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:16px;padding:22px 22px 20px;display:flex;flex-direction:column}
+.card .top{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.badge{font-size:11px;font-weight:800;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:.4px}
+.badge.A{background:rgba(34,197,94,.16);color:#86efac;border:1px solid rgba(34,197,94,.4)}
+.badge.P{background:rgba(251,191,36,.16);color:#fcd34d;border:1px solid rgba(251,191,36,.4)}
+.card h3{margin:0;font-size:20px}
+.card h3 small{color:var(--muted);font-weight:600;font-size:13px}
+.rows{margin:6px 0 0;font-size:13.5px;color:var(--muted);line-height:1.5}
+.rows .r{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-bottom:1px solid var(--line)}
+.rows .r:last-child{border-bottom:none}
+.rows .r b{color:var(--txt);font-weight:700;text-align:right}
+.upside{margin-top:14px;background:rgba(56,189,248,.07);border:1px dashed rgba(56,189,248,.35);border-radius:12px;padding:12px 14px}
+.upside .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.5px;color:var(--accent);font-weight:800;margin-bottom:6px}
+.upside .blurline{font-size:13.5px;color:var(--txt);line-height:1.5}
+.locked{filter:blur(4.5px);user-select:none}
+.gate{margin-top:10px;display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--muted)}
+.gate .lock{color:var(--gold);font-weight:800}
+/* bridge to beachstake */
+.bridge{max-width:1000px;margin:30px auto 0;display:flex;align-items:center;gap:18px;flex-wrap:wrap;background:rgba(56,189,248,.06);border:1px solid var(--line);border-radius:16px;padding:22px 24px}
+.bridge .flag{font-size:34px;line-height:1}
+.bridge .txt{flex:1;min-width:240px}
+.bridge .txt h4{margin:0 0 4px;font-size:17px}
+.bridge .txt p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.5}
+/* method */
+.steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;max-width:900px;margin:0 auto}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:24px}
+.step .num{width:34px;height:34px;border-radius:10px;background:rgba(56,189,248,.14);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:850;margin-bottom:12px}
+.step h4{margin:0 0 6px;font-size:16px}.step p{margin:0;color:var(--muted);font-size:13.5px;line-height:1.6}
+.cta-wide{text-align:center;margin-top:38px}
+.note{text-align:center;margin-top:60px;padding:16px;color:#6f96bd;font-size:12.5px}
+@media(max-width:820px){.cards{grid-template-columns:1fr}.steps{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <div class="logo">📡 Radar <b>Concessioni</b></div>
+  <div class="nav-cta">
+    <a class="btn btn-ghost btn-sm" href="#">EN</a>
+    <a class="btn btn-gold btn-sm" href="#">Abbonati</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="kicker">📈 Taglio investitore · Bolkestein 2026</span>
+  <h1>Le gare balneari, lette come<br><span class="hl">opportunità d'investimento</span></h1>
+  <p class="sub">Ogni gara è un asset: base d'asta, lotti, durata, criterio di aggiudicazione. Radar Concessioni li mette in fila e li trasforma in un dossier leggibile, prima che lo facciano gli altri.</p>
+
+  <div class="hero-cta">
+    <a class="btn btn-primary" href="#opportunita">Accedi ai dossier investitore</a>
+    <a class="btn btn-ghost" href="#metodo">Come leggiamo i dati</a>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">59</div><div class="l">Comuni monitorati</div></div>
+    <div class="stat"><div class="n">3</div><div class="l">Gare aperte ora</div></div>
+    <div class="stat"><div class="n">15</div><div class="l">Regioni coperte</div></div>
+  </div>
+
+  <div class="trust">Fonti pubbliche ufficiali — <b>Gazzetta Ufficiale</b>, albi pretori, portali appalti — con link diretto. <b>I numeri qui sotto sono esempi illustrativi</b>, non raccomandazioni d'investimento.</div>
+</div></header>
+
+<section class="block" id="opportunita"><div class="wrap">
+  <div class="h2">Tre opportunità d'esempio</div>
+  <div class="h2sub">Stessa griglia di lettura per ogni gara. La riga <b>“Analisi / upside”</b> — stima di valore, ticket e margini — è riservata al dossier <b>Pro</b>.</div>
+
+  <div class="cards">
+
+    <!-- CARD 1 -->
+    <div class="card">
+      <div class="top"><span class="badge A">🟢 Aperta</span><h3>Rimini <small>(RN)</small></h3></div>
+      <div class="rows">
+        <div class="r"><span>Base d'asta</span><b>€986.545</b></div>
+        <div class="r"><span>Lotti</span><b>27</b></div>
+        <div class="r"><span>Durata</span><b>12 anni</b></div>
+        <div class="r"><span>Criterio</span><b>OEPV 90/10</b></div>
+      </div>
+      <div class="upside">
+        <div class="lbl">Analisi / upside</div>
+        <div class="blurline locked">Ticket medio €36.500/lotto · ricavi stagionali stimati €1,4M · break-even al 4° anno · canone vs. fatturato 7,1%.</div>
+        <div class="gate"><span class="lock">🔒</span> Dossier completo con <b>Pro</b></div>
+      </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card">
+      <div class="top"><span class="badge A">🟢 Aperta</span><h3>Taggia <small>(IM)</small></h3></div>
+      <div class="rows">
+        <div class="r"><span>Base d'asta</span><b>€214.200</b></div>
+        <div class="r"><span>Lotti</span><b>6</b></div>
+        <div class="r"><span>Durata</span><b>12 anni</b></div>
+        <div class="r"><span>Criterio</span><b>OEPV 90/10</b></div>
+      </div>
+      <div class="upside">
+        <div class="lbl">Analisi / upside</div>
+        <div class="blurline locked">Litorale a forte stagionalità · indennizzo uscente €88k · marginalità più alta sul food &amp; beverage · concorrenza locale media.</div>
+        <div class="gate"><span class="lock">🔒</span> Dossier completo con <b>Pro</b></div>
+      </div>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="card">
+      <div class="top"><span class="badge P">🟡 In apertura</span><h3>Cervia <small>(RA)</small></h3></div>
+      <div class="rows">
+        <div class="r"><span>Base d'asta</span><b>€540.000</b><span style="display:none"></span></div>
+        <div class="r"><span>Lotti</span><b>14</b></div>
+        <div class="r"><span>Durata</span><b>12 anni</b></div>
+        <div class="r"><span>Criterio</span><b>OEPV 90/10</b></div>
+      </div>
+      <div class="upside">
+        <div class="lbl">Analisi / upside</div>
+        <div class="blurline locked">Bacino turistico maturo · alta occupazione luglio-agosto · potenziale rivalutazione canone · finestra di domanda attesa Q3.</div>
+        <div class="gate"><span class="lock">🔒</span> Dossier completo con <b>Pro</b></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BRIDGE TO BEACHSTAKE -->
+  <div class="bridge">
+    <div class="flag">🌍</div>
+    <div class="txt">
+      <h4>Sei un investitore estero?</h4>
+      <p>Lo stesso modello, in inglese e con metriche pensate per chi guarda l'Italia da fuori, è disponibile su <b>BeachStake</b> — il prodotto gemello internazionale di Radar Concessioni.</p>
+    </div>
+    <a class="btn btn-ghost btn-sm" href="#">Vai a BeachStake →</a>
+  </div>
+</div></section>
+
+<section class="block" id="metodo"><div class="wrap">
+  <div class="h2">Come leggiamo ogni gara</div>
+  <div class="h2sub">Dalla pubblicazione del bando al dossier investitore, senza perdere giorni tra Gazzette e albi pretori.</div>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><h4>📥 Raccolta</h4><p>Bandi e allegati dalle fonti ufficiali, con link diretto e verifica umana ogni mattina.</p></div>
+    <div class="step"><div class="num">2</div><h4>📊 Struttura</h4><p>Base d'asta, lotti, durata, criterio OEPV: dati grezzi messi nella stessa griglia, comune per comune.</p></div>
+    <div class="step"><div class="num">3</div><h4>🔓 Dossier</h4><p>Stime, ticket e scenari di upside nel dossier investitore Pro. Numeri d'esempio, nessuna promessa di rendimento.</p></div>
+  </div>
+
+  <div class="cta-wide">
+    <a class="btn btn-gold" href="#">Accedi ai dossier investitore</a>
+  </div>
+</div></section>
+
+<div class="note">PROPOSTA 14 — "Dove sta l'opportunità balneare" · taglio investitore. Mockup statico, dati d'esempio. Palette e modello reali di Radar Concessioni.</div>
+</body>
+</html>

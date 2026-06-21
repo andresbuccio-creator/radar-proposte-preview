@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Proposta 7 — La tua gara è aperta? Chiedi. · Radar Concessioni</title>
+<style>
+:root{--bg:#0a2540;--panel:#0e2c4d;--panel2:#143a5e;--line:#1c3a5a;--txt:#eaf2fb;--muted:#9cc4e6;--accent:#a78bfa;--open:#22c55e;--prep:#fbbf24;--closed:#64748b;--gold:#fbbf24;--danger:#ef4444}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+a{color:var(--accent);text-decoration:none}
+.btn{cursor:pointer;border:none;border-radius:10px;padding:12px 20px;font-size:15px;font-weight:700;font-family:inherit}
+.btn-primary{background:var(--accent);color:#1a0f33}
+.btn-gold{background:var(--gold);color:#1a1206}
+.btn-ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+.btn-sm{padding:8px 13px;font-size:13px}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(10,37,64,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-weight:850;font-size:18px;letter-spacing:-.3px}.logo b{color:var(--accent)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+/* hero question-first */
+.hero{padding:78px 0 36px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% -10%,rgba(167,139,250,.18),transparent 60%);pointer-events:none}
+.kicker{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--accent);background:rgba(167,139,250,.1);border:1px solid rgba(167,139,250,.3);padding:5px 12px;border-radius:20px;margin-bottom:20px}
+.hero h1{font-size:clamp(30px,5.6vw,52px);line-height:1.08;margin:0 0 14px;font-weight:850;letter-spacing:-.8px}
+.hero h1 .hl{color:var(--accent)}
+.hero p.sub{font-size:clamp(15px,2.2vw,19px);color:var(--muted);max-width:600px;margin:0 auto 34px}
+/* big ask box */
+.askbox{position:relative;z-index:2;max-width:660px;margin:0 auto;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:10px;display:flex;gap:8px;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.askbox input{flex:1;background:transparent;border:none;color:var(--txt);font-size:18px;padding:14px 16px;font-family:inherit;outline:none}
+.askbox input::placeholder{color:#6a5fa0}
+.suggest{max-width:660px;margin:14px auto 0;display:flex;gap:8px;flex-wrap:wrap;justify-content:center;font-size:13px;color:var(--muted)}
+.suggest a{background:var(--panel2);border:1px solid var(--line);padding:7px 13px;border-radius:20px;color:var(--txt)}
+/* stats strip */
+.stats{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-top:46px;position:relative;z-index:2}
+.stat .n{font-size:32px;font-weight:850;color:var(--accent)}
+.stat .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+/* trust */
+.trust{border-top:1px solid var(--line);margin-top:50px;padding:26px 0;text-align:center;color:var(--muted);font-size:13.5px}
+.trust b{color:var(--txt)}
+section.block{padding:54px 0;border-top:1px solid var(--line)}
+.h2{font-size:27px;font-weight:800;text-align:center;margin:0 0 8px}
+.h2sub{color:var(--muted);text-align:center;max-width:620px;margin:0 auto 34px;font-size:15px}
+/* Q&A conversation cards */
+.qa{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.qacard{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px 22px}
+.qacard .q{display:flex;align-items:flex-start;gap:12px;font-size:17px;font-weight:800;letter-spacing:-.2px}
+.qacard .q .ico{flex:none;width:30px;height:30px;border-radius:9px;background:rgba(167,139,250,.16);color:var(--accent);display:flex;align-items:center;justify-content:center;font-weight:850;font-size:15px}
+.qacard .a{margin:12px 0 0 42px;color:var(--muted);font-size:15px;line-height:1.65;border-left:2px solid var(--accent);padding-left:14px}
+.qacard .a .big{display:block;color:var(--txt);font-size:21px;font-weight:850;letter-spacing:-.4px;margin-bottom:2px}
+.qacard .a b{color:var(--txt)}
+.qacard .a ul{margin:6px 0 0;padding-left:18px}
+.qacard .a li{margin:3px 0}
+.tag{display:inline-block;margin-left:6px;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.4px;padding:2px 9px;border-radius:20px;vertical-align:middle}
+.tag.open{background:rgba(34,197,94,.16);color:#86efac;border:1px solid rgba(34,197,94,.4)}
+/* final cta */
+.finalcta{text-align:center;max-width:640px;margin:42px auto 0;background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:18px;padding:34px 26px}
+.finalcta h3{margin:0 0 8px;font-size:23px;font-weight:850;letter-spacing:-.4px}
+.finalcta p{margin:0 0 20px;color:var(--muted);font-size:15px}
+.finalcta .row{display:flex;gap:10px;max-width:480px;margin:0 auto;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:8px}
+.finalcta .row input{flex:1;background:transparent;border:none;color:var(--txt);font-size:16px;padding:12px 14px;font-family:inherit;outline:none}
+.finalcta .row input::placeholder{color:#6a5fa0}
+.finalcta small{display:block;margin-top:14px;color:#6f96bd;font-size:12.5px}
+.note{text-align:center;margin-top:60px;padding:16px;color:#6f96bd;font-size:12.5px}
+@media(max-width:760px){.askbox{flex-direction:column}.askbox .btn{width:100%}.finalcta .row{flex-direction:column}.finalcta .row .btn{width:100%}.qacard .a{margin-left:0}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <div class="logo">📡 Radar <b>Concessioni</b></div>
+  <div class="nav-cta">
+    <a class="btn btn-ghost btn-sm" href="#">EN</a>
+    <a class="btn btn-gold btn-sm" href="#">Abbonati</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="kicker">Riforma Bolkestein · gare 2026</span>
+  <h1>La gara della tua spiaggia<br>è <span class="hl">aperta</span>? 💬</h1>
+  <p class="sub">Una domanda secca, una risposta secca. Scrivi il tuo comune e ti diciamo subito come sta la tua gara.</p>
+
+  <div class="askbox">
+    <input type="text" value="Rimini" placeholder="Il tuo comune, es. Cervia…">
+    <button class="btn btn-primary">Chiedi</button>
+  </div>
+  <div class="suggest">
+    <span style="align-self:center">Provano in tanti:</span>
+    <a href="#">Rimini</a><a href="#">Taggia</a><a href="#">Pietra Ligure</a><a href="#">Loano</a><a href="#">Jesolo</a>
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">59</div><div class="l">Comuni monitorati</div></div>
+    <div class="stat"><div class="n">3</div><div class="l">Gare aperte ora</div></div>
+    <div class="stat"><div class="n">15</div><div class="l">Regioni coperte</div></div>
+  </div>
+
+  <div class="trust">Rispondiamo solo con <b>fonti pubbliche ufficiali</b> — Gazzetta Ufficiale, albi pretori, portali appalti — controllate a mano ogni mattina.</div>
+</div></header>
+
+<section class="block"><div class="wrap">
+  <div class="h2">Le domande che ci fanno tutti</div>
+  <div class="h2sub">Niente giri di parole. La domanda in alto, la risposta concreta sotto.</div>
+
+  <div class="qa">
+
+    <div class="qacard">
+      <div class="q"><span class="ico">?</span><span>Quando scade la gara a Rimini? <span class="tag open">aperta</span></span></div>
+      <div class="a"><span class="big">10/09/2026, ore 13:00.</span>Offerte entro quella data per i 27 lotti del Litorale Nord. Criterio di aggiudicazione <b>OEPV 90/10</b>.</div>
+    </div>
+
+    <div class="qacard">
+      <div class="q"><span class="ico">?</span><span>Cosa serve per partecipare?</span></div>
+      <div class="a">In sintesi, tre cose:
+        <ul>
+          <li>Requisiti di onorabilità e professionalità del concessionario.</li>
+          <li>Offerta tecnica + offerta economica (qui pesa l'OEPV 90/10).</li>
+          <li>Garanzia provvisoria e documentazione amministrativa del bando.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="qacard">
+      <div class="q"><span class="ico">?</span><span>Quanto dura la concessione?</span></div>
+      <div class="a"><span class="big">12 anni.</span>È la durata prevista dai bandi attuali, salvo diversa indicazione del singolo Comune.</div>
+    </div>
+
+    <div class="qacard">
+      <div class="q"><span class="ico">?</span><span>Come faccio a non perderla?</span></div>
+      <div class="a"><span class="big">Attivi l'avviso email gratuito.</span>Ti scriviamo appena la tua gara apre, cambia o si avvicina alla scadenza. Niente da controllare a mano.</div>
+    </div>
+
+    <div class="qacard">
+      <div class="q"><span class="ico">?</span><span>Quanto costa Radar Pro?</span></div>
+      <div class="a"><span class="big">€500 una tantum + €100/mese.</span>Include avvisi email, scadenze esatte, criteri e link diretti ai documenti ufficiali di tutte le gare.</div>
+    </div>
+
+  </div>
+
+  <div class="finalcta">
+    <h3>Hai un'altra domanda? Falla. 💬</h3>
+    <p>Scrivi il comune che ti interessa: tra i 59 monitorati su 637 comuni costieri, probabilmente c'è già.</p>
+    <div class="row">
+      <input type="text" placeholder="Es. Loano, Jesolo, Taggia…">
+      <button class="btn btn-primary">Fai la tua domanda</button>
+    </div>
+    <small>Risposta immediata sulle gare aperte. Per scadenze esatte e avvisi: Radar Pro.</small>
+  </div>
+</div></section>
+
+<div class="note">PROPOSTA 7 — “La tua gara è aperta? Chiedi.” · domanda secca → risposta. Mockup statico, dati d'esempio. Palette e modello reali di Radar Concessioni.</div>
+</body>
+</html>

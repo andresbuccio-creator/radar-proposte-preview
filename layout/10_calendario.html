@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Proposta 10 — Il calendario delle scadenze · Radar Concessioni</title>
+<style>
+:root{--bg:#0a2540;--panel:#0e2c4d;--panel2:#143a5e;--line:#1c3a5a;--txt:#eaf2fb;--muted:#9cc4e6;--accent:#60a5fa;--open:#22c55e;--prep:#fbbf24;--closed:#64748b;--gold:#fbbf24;--danger:#ef4444}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+a{color:var(--accent);text-decoration:none}
+.btn{cursor:pointer;border:none;border-radius:10px;padding:12px 20px;font-size:15px;font-weight:700;font-family:inherit}
+.btn-primary{background:var(--accent);color:#06151b}
+.btn-gold{background:var(--gold);color:#1a1206}
+.btn-ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+.btn-sm{padding:8px 13px;font-size:13px}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(10,37,64,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-weight:850;font-size:18px;letter-spacing:-.3px}.logo b{color:var(--accent)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+/* hero */
+.hero{padding:72px 0 30px;text-align:center;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% -10%,rgba(96,165,250,.16),transparent 60%);pointer-events:none}
+.kicker{display:inline-block;font-size:12.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--accent);background:rgba(96,165,250,.1);border:1px solid rgba(96,165,250,.3);padding:5px 12px;border-radius:20px;margin-bottom:20px}
+.hero h1{font-size:clamp(30px,5.4vw,50px);line-height:1.08;margin:0 0 14px;font-weight:850;letter-spacing:-.8px}
+.hero h1 .hl{color:var(--accent)}
+.hero p.sub{font-size:clamp(15px,2.2vw,19px);color:var(--muted);max-width:620px;margin:0 auto 34px}
+/* stats strip */
+.stats{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-top:8px;position:relative;z-index:2}
+.stat .n{font-size:32px;font-weight:850;color:var(--accent)}
+.stat .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+/* trust */
+.trust{border-top:1px solid var(--line);margin-top:42px;padding:26px 0;text-align:center;color:var(--muted);font-size:13.5px}
+.trust b{color:var(--txt)}
+/* sections */
+section.block{padding:54px 0;border-top:1px solid var(--line)}
+.h2{font-size:27px;font-weight:800;text-align:center;margin:0 0 8px}
+.h2sub{color:var(--muted);text-align:center;max-width:640px;margin:0 auto 38px;font-size:15px}
+/* timeline */
+.timeline{max-width:740px;margin:0 auto;position:relative;padding-left:8px}
+.timeline::before{content:"";position:absolute;left:14px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,var(--accent),var(--line));opacity:.55}
+.month{display:flex;align-items:center;gap:14px;margin:34px 0 18px;position:relative}
+.month:first-child{margin-top:0}
+.month .dot{width:30px;height:30px;border-radius:50%;background:var(--panel2);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;font-size:14px;flex:0 0 auto;z-index:2}
+.month .lbl{font-size:15px;font-weight:850;letter-spacing:1.5px;text-transform:uppercase;color:var(--txt)}
+.month .yr{color:var(--muted);font-weight:600;letter-spacing:0;font-size:13px;text-transform:none}
+.entry{margin:0 0 12px 44px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:16px 18px;display:flex;gap:16px;align-items:center;position:relative}
+.entry::before{content:"";position:absolute;left:-30px;top:50%;width:14px;height:2px;background:var(--line)}
+.pill-date{flex:0 0 auto;text-align:center;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:8px 12px;min-width:62px}
+.pill-date .d{font-size:22px;font-weight:850;line-height:1;color:var(--txt)}
+.pill-date .m{font-size:10.5px;text-transform:uppercase;letter-spacing:.5px;color:var(--muted);margin-top:3px}
+.entry .body{flex:1;min-width:0}
+.entry .ttl{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:5px}
+.entry .ttl h4{margin:0;font-size:17px;font-weight:800}
+.entry .ttl small{color:var(--muted);font-weight:600;font-size:13px}
+.entry .det{color:var(--muted);font-size:13.5px;line-height:1.55}
+.entry .det b{color:var(--txt)}
+.badge{font-size:11px;font-weight:800;padding:3px 10px;border-radius:20px;text-transform:uppercase;letter-spacing:.4px;white-space:nowrap}
+.badge.open{background:rgba(34,197,94,.16);color:#86efac;border:1px solid rgba(34,197,94,.4)}
+.badge.prep{background:rgba(251,191,36,.14);color:#fcd34d;border:1px solid rgba(251,191,36,.4)}
+.badge.closed{background:rgba(100,116,139,.18);color:#cbd5e1;border:1px solid rgba(100,116,139,.45)}
+/* highlighted next deadline */
+.entry.next{background:linear-gradient(180deg,var(--panel),var(--panel2));border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset,0 18px 40px rgba(0,0,0,.4)}
+.entry.next .pill-date{background:rgba(96,165,250,.15);border-color:var(--accent)}
+.entry.next .pill-date .d{color:var(--accent)}
+.flag{position:absolute;top:-11px;left:16px;font-size:10.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:#06151b;background:var(--accent);padding:3px 10px;border-radius:20px}
+.cd{display:flex;gap:8px;margin-top:10px}
+.cd div{background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.35);border-radius:9px;padding:6px 11px;text-align:center;min-width:52px}
+.cd .n{font-size:19px;font-weight:850;color:#fca5a5;line-height:1}.cd .l{font-size:9.5px;color:var(--muted);text-transform:uppercase;margin-top:3px}
+/* CTA section */
+.cta{max-width:760px;margin:0 auto;background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:18px;padding:34px 30px;text-align:center}
+.cta h3{margin:0 0 8px;font-size:24px;font-weight:850}
+.cta p{margin:0 auto 22px;color:var(--muted);font-size:15px;max-width:540px;line-height:1.6}
+.cta p b{color:var(--txt)}
+.cta-form{display:flex;gap:8px;max-width:480px;margin:0 auto;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:8px}
+.cta-form input{flex:1;background:transparent;border:none;color:var(--txt);font-size:15px;padding:11px 14px;font-family:inherit;outline:none}
+.cta-form input::placeholder{color:#5f86ad}
+.price{margin-top:16px;font-size:13px;color:var(--muted)}
+.price b{color:var(--txt)}
+.legend{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin:0 auto 34px;font-size:13px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.note{text-align:center;margin-top:60px;padding:16px;color:#6f96bd;font-size:12.5px}
+@media(max-width:760px){.entry{flex-direction:column;align-items:flex-start;gap:12px}.entry::before{display:none}.cta-form{flex-direction:column}.cta-form .btn{width:100%}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <div class="logo">📡 Radar <b>Concessioni</b></div>
+  <div class="nav-cta">
+    <a class="btn btn-ghost btn-sm" href="#">EN</a>
+    <a class="btn btn-gold btn-sm" href="#">Abbonati</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <span class="kicker">Riforma Bolkestein · gare 2026</span>
+  <h1>Il calendario delle<br><span class="hl">scadenze</span> 2026</h1>
+  <p class="sub">Tutte le gare delle concessioni balneari in un'unica agenda. Mese per mese, sai cosa apre, cosa scade e quando partecipare. Mai più una data persa tra Gazzette e albi pretori.</p>
+
+  <div class="stats">
+    <div class="stat"><div class="n">59</div><div class="l">Comuni monitorati</div></div>
+    <div class="stat"><div class="n">3</div><div class="l">Gare aperte ora</div></div>
+    <div class="stat"><div class="n">15</div><div class="l">Regioni coperte</div></div>
+  </div>
+
+  <div class="trust">Fonti pubbliche ufficiali — <b>Gazzetta Ufficiale</b>, albi pretori, portali appalti — con link diretto. Verifica umana ogni mattina.</div>
+</div></header>
+
+<section class="block"><div class="wrap">
+  <div class="h2">La tua agenda delle gare</div>
+  <div class="h2sub">Le scadenze chiave del 2026, raggruppate per mese. La prossima data importante è evidenziata in alto.</div>
+
+  <div class="legend">
+    <span>🟢 Aperta</span>
+    <span>🟡 In arrivo</span>
+    <span>⚪ Chiusa</span>
+  </div>
+
+  <div class="timeline">
+
+    <!-- GIUGNO -->
+    <div class="month">
+      <div class="dot">06</div>
+      <div class="lbl">Giugno <span class="yr">2026</span></div>
+    </div>
+    <div class="entry">
+      <div class="pill-date"><div class="d">15</div><div class="m">Giu</div></div>
+      <div class="body">
+        <div class="ttl"><h4>Taggia</h4><small>(IM)</small><span class="badge closed">⚪ Chiusa</span></div>
+        <div class="det">Gara <b>aggiudicata</b>. Esito pubblicato all'albo pretorio · prevalgono le mappe PUD sull'Allegato A.</div>
+      </div>
+    </div>
+
+    <!-- LUGLIO -->
+    <div class="month">
+      <div class="dot">07</div>
+      <div class="lbl">Luglio <span class="yr">2026</span></div>
+    </div>
+    <div class="entry">
+      <div class="pill-date"><div class="d">06</div><div class="m">Lug</div></div>
+      <div class="body">
+        <div class="ttl"><h4>Laigueglia</h4><small>(SV)</small><span class="badge open">🟢 Aperta</span></div>
+        <div class="det">Bando pubblicato · termine presentazione offerte <b>06/07/2026</b> · criterio OEPV.</div>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="pill-date"><div class="d">22</div><div class="m">Lug</div></div>
+      <div class="body">
+        <div class="ttl"><h4>Pietra Ligure</h4><small>(SV)</small><span class="badge prep">🟡 In arrivo</span></div>
+        <div class="det">Avviso in apertura · pubblicazione del bando attesa entro fine mese.</div>
+      </div>
+    </div>
+
+    <!-- AGOSTO -->
+    <div class="month">
+      <div class="dot">08</div>
+      <div class="lbl">Agosto <span class="yr">2026</span></div>
+    </div>
+    <div class="entry">
+      <div class="pill-date"><div class="d">04</div><div class="m">Ago</div></div>
+      <div class="body">
+        <div class="ttl"><h4>Loano</h4><small>(SV)</small><span class="badge prep">🟡 In arrivo</span></div>
+        <div class="det">Manifestazione d'interesse in preparazione · documenti preliminari in consultazione.</div>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="pill-date"><div class="d">28</div><div class="m">Ago</div></div>
+      <div class="body">
+        <div class="ttl"><h4>Finale Ligure</h4><small>(SV)</small><span class="badge prep">🟡 In arrivo</span></div>
+        <div class="det">Programmazione gara confermata · apertura procedura prevista a fine estate.</div>
+      </div>
+    </div>
+
+    <!-- SETTEMBRE -->
+    <div class="month">
+      <div class="dot">09</div>
+      <div class="lbl">Settembre <span class="yr">2026</span></div>
+    </div>
+    <div class="entry next">
+      <div class="flag">⭐ Prossima scadenza</div>
+      <div class="pill-date"><div class="d">10</div><div class="m">Set</div></div>
+      <div class="body">
+        <div class="ttl"><h4>Rimini</h4><small>(RN)</small><span class="badge open">🟢 Aperta</span></div>
+        <div class="det">Bando pubblicato · <b>27 lotti</b> sul Litorale Nord · offerte entro il <b>10/09/2026 ore 13:00</b>.</div>
+        <div class="cd">
+          <div><div class="n">81</div><div class="l">giorni</div></div>
+          <div><div class="n">07</div><div class="l">ore</div></div>
+          <div><div class="n">00</div><div class="l">min</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="pill-date"><div class="d">30</div><div class="m">Set</div></div>
+      <div class="body">
+        <div class="ttl"><h4>Cervia</h4><small>(RA)</small><span class="badge prep">🟡 In arrivo</span></div>
+        <div class="det">Bando atteso a inizio autunno · monitoraggio attivo su albo pretorio e portale appalti.</div>
+      </div>
+    </div>
+
+  </div>
+</div></section>
+
+<section class="block"><div class="wrap">
+  <div class="cta">
+    <h3>🔔 Non perdere una data</h3>
+    <p>Attiva gli <b>avvisi email</b> di <b>Radar Pro</b>: ti scriviamo appena la gara del tuo comune apre, prima di ogni scadenza e a ogni aggiornamento dei documenti ufficiali. Niente più Gazzette da controllare a mano.</p>
+    <div class="cta-form">
+      <input type="email" placeholder="La tua email…">
+      <button class="btn btn-gold">Attiva gli avvisi</button>
+    </div>
+    <div class="price"><b>Radar Pro</b> — attivazione €500 + €100/mese · avvisi email illimitati · disdici quando vuoi.</div>
+  </div>
+</div></section>
+
+<div class="note">PROPOSTA 10 — “Il calendario delle scadenze” · timeline/agenda. Mockup statico, dati d'esempio. Palette e modello reali di Radar Concessioni.</div>
+</body>
+</html>

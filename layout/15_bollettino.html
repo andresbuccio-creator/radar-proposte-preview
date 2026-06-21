@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Proposta 15 — Il bollettino del giorno · Radar Concessioni</title>
+<style>
+:root{--bg:#0a2540;--panel:#0e2c4d;--panel2:#143a5e;--line:#1c3a5a;--txt:#eaf2fb;--muted:#9cc4e6;--accent:#fb7185;--open:#22c55e;--prep:#fbbf24;--closed:#64748b;--gold:#fbbf24;--danger:#ef4444}
+*{box-sizing:border-box}
+body{margin:0;font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--txt);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1100px;margin:0 auto;padding:0 22px}
+a{color:var(--accent);text-decoration:none}
+.btn{cursor:pointer;border:none;border-radius:10px;padding:12px 20px;font-size:15px;font-weight:700;font-family:inherit}
+.btn-primary{background:var(--accent);color:#3a0a13}
+.btn-gold{background:var(--gold);color:#1a1206}
+.btn-ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+.btn-sm{padding:8px 13px;font-size:13px}
+/* nav */
+nav{position:sticky;top:0;z-index:20;background:rgba(10,37,64,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font-weight:850;font-size:18px;letter-spacing:-.3px}.logo b{color:var(--accent)}
+.nav-cta{display:flex;gap:10px;align-items:center}
+/* hero — testata */
+.hero{padding:54px 0 30px;position:relative;overflow:hidden;text-align:center}
+.hero::after{content:"";position:absolute;inset:0;background:radial-gradient(120% 80% at 50% -10%,rgba(251,113,133,.14),transparent 60%);pointer-events:none}
+.masthead{position:relative;z-index:2;border-top:2px solid var(--accent);border-bottom:2px solid var(--accent);max-width:760px;margin:0 auto;padding:22px 0}
+.dateline-top{display:flex;justify-content:space-between;align-items:center;font-size:12px;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);max-width:760px;margin:0 auto 10px;padding:0 4px}
+.dateline-top b{color:var(--accent)}
+.hero h1{font-size:clamp(30px,5.6vw,52px);line-height:1.05;margin:0;font-weight:850;letter-spacing:-1px}
+.hero h1 .hl{color:var(--accent)}
+.hero .edition{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--accent);background:rgba(251,113,133,.12);border:1px solid rgba(251,113,133,.35);padding:5px 14px;border-radius:20px;margin-top:16px}
+.hero p.sub{font-size:clamp(15px,2.2vw,18px);color:var(--muted);max-width:580px;margin:18px auto 0}
+/* edizione layout 2 colonne */
+.edizione{padding:46px 0 10px;position:relative}
+.cols{display:grid;grid-template-columns:1.7fr 1fr;gap:30px;align-items:start}
+.colhead{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;color:var(--accent);border-bottom:1px solid var(--line);padding-bottom:10px;margin-bottom:6px}
+.colhead .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+/* voci notizia */
+.voce{padding:20px 0;border-bottom:1px solid var(--line)}
+.voce:last-child{border-bottom:none}
+.dateline{font-size:11.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);margin-bottom:7px;display:flex;align-items:center;gap:8px}
+.badge{font-size:10.5px;font-weight:800;padding:2px 9px;border-radius:20px;text-transform:uppercase;letter-spacing:.3px}
+.badge.open{background:rgba(34,197,94,.16);color:#86efac;border:1px solid rgba(34,197,94,.4)}
+.badge.prep{background:rgba(251,191,36,.16);color:#fcd34d;border:1px solid rgba(251,191,36,.4)}
+.badge.closed{background:rgba(100,116,139,.2);color:#cbd5e1;border:1px solid rgba(100,116,139,.45)}
+.badge.info{background:rgba(251,113,133,.14);color:#fda4af;border:1px solid rgba(251,113,133,.4)}
+.voce h3{margin:0 0 6px;font-size:20px;line-height:1.25;letter-spacing:-.3px}
+.voce p{margin:0;color:var(--muted);font-size:14px;line-height:1.6}
+.voce p b{color:var(--txt)}
+.voce .more{display:inline-block;margin-top:8px;font-size:12.5px;font-weight:700}
+/* colonna laterale */
+.aside{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:20px;position:sticky;top:78px}
+.pill{display:block;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:13px 15px;margin-top:12px}
+.pill:first-of-type{margin-top:14px}
+.pill .pn{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.pill .pn b{font-size:15px}
+.pill .cd{font-size:12px;font-weight:800;color:#fca5a5;background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.3);padding:2px 9px;border-radius:8px;white-space:nowrap}
+.pill small{display:block;color:var(--muted);font-size:12px;margin-top:5px}
+.aside .ed-note{margin-top:16px;font-size:12px;color:var(--muted);line-height:1.55;border-top:1px dashed var(--line);padding-top:14px}
+/* stats strip */
+.stats{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-top:44px}
+.stat .n{font-size:32px;font-weight:850;color:var(--accent)}
+.stat .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
+/* CTA newsletter */
+section.cta{padding:56px 0;border-top:1px solid var(--line);margin-top:30px;text-align:center;position:relative;overflow:hidden}
+section.cta::after{content:"";position:absolute;inset:0;background:radial-gradient(110% 90% at 50% 120%,rgba(251,113,133,.12),transparent 60%);pointer-events:none}
+.cta-inner{position:relative;z-index:2;max-width:640px;margin:0 auto}
+.cta h2{font-size:28px;font-weight:850;margin:0 0 10px;letter-spacing:-.5px}
+.cta p{color:var(--muted);font-size:15px;margin:0 0 26px}
+.subscribe{max-width:520px;margin:0 auto;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:10px;display:flex;gap:8px;box-shadow:0 24px 60px rgba(0,0,0,.4)}
+.subscribe input{flex:1;background:transparent;border:none;color:var(--txt);font-size:16px;padding:13px 15px;font-family:inherit;outline:none}
+.subscribe input::placeholder{color:#5f86ad}
+.cta .micro{margin-top:14px;font-size:12.5px;color:var(--muted)}
+.cta .micro b{color:var(--txt)}
+.trust{border-top:1px solid var(--line);margin-top:46px;padding:26px 0;text-align:center;color:var(--muted);font-size:13.5px}
+.trust b{color:var(--txt)}
+.note{text-align:center;margin-top:50px;padding:16px;color:#6f96bd;font-size:12.5px}
+@media(max-width:760px){.cols{grid-template-columns:1fr}.aside{position:static}.subscribe{flex-direction:column}.subscribe .btn{width:100%}.dateline-top{flex-direction:column;gap:4px}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <div class="logo">📡 Radar <b>Concessioni</b></div>
+  <div class="nav-cta">
+    <a class="btn btn-ghost btn-sm" href="#">EN</a>
+    <a class="btn btn-gold btn-sm" href="#">Abbonati</a>
+  </div>
+</div></nav>
+
+<header class="hero"><div class="wrap">
+  <div class="dateline-top">
+    <span>📰 Il bollettino delle concessioni balneari</span>
+    <span>Edizione n. <b>168</b></span>
+  </div>
+  <div class="masthead">
+    <h1>Il <span class="hl">bollettino</span> del giorno</h1>
+    <div class="edition">Edizione di domenica 21 giugno 2026</div>
+  </div>
+  <p class="sub">Ogni mattina, in una sola pagina: cosa è cambiato sulle gare balneari in tutta Italia. Letto, verificato e scritto a mano.</p>
+</div></header>
+
+<section class="edizione"><div class="wrap">
+  <div class="cols">
+
+    <!-- COLONNA PRINCIPALE: le voci del giorno -->
+    <div class="main">
+      <div class="colhead"><span class="dot"></span>Le voci di oggi</div>
+
+      <article class="voce">
+        <div class="dateline">Finale Ligure (SV) · 21 giu · <span class="badge prep">🟡 Cambio stato</span></div>
+        <h3>Finale Ligure: la gara passa a “in arrivo”</h3>
+        <p>Il Comune ha pubblicato l'avviso di <b>prossima indizione</b>: lo stato passa da “monitorata” a <b>in arrivo</b>. Atteso il bando entro l'estate, criterio OEPV. Da tenere d'occhio.</p>
+        <a class="more" href="#">Leggi la scheda →</a>
+      </article>
+
+      <article class="voce">
+        <div class="dateline">Pietra Ligure (SV) · 21 giu · <span class="badge closed">⚪ Aggiudicazione</span></div>
+        <h3>Pietra Ligure: pubblicata l'aggiudicazione</h3>
+        <p>Online la <b>determina di aggiudicazione</b> dei lotti messi a gara a marzo. Gara <b>chiusa</b>: archiviamo esiti e graduatoria. Link alla determina nella scheda.</p>
+        <a class="more" href="#">Vedi gli esiti →</a>
+      </article>
+
+      <article class="voce">
+        <div class="dateline">Cervia (RA) · 21 giu · <span class="badge info">🔄 Aggiornamento</span></div>
+        <h3>Cervia: timeline aggiornata</h3>
+        <p>Rettificato il <b>cronoprogramma</b>: sopralluogo obbligatorio anticipato e nuova finestra per i chiarimenti. La scadenza per le offerte resta invariata.</p>
+        <a class="more" href="#">Apri la timeline →</a>
+      </article>
+
+      <article class="voce">
+        <div class="dateline">Rimini (RN) · 21 giu · <span class="badge open">🟢 Gara aperta</span></div>
+        <h3>Rimini: il countdown è partito</h3>
+        <p><b>27 lotti</b> sul Litorale Nord, criterio OEPV 90/10. Offerte entro il <b>10/09/2026 ore 13:00</b>: mancano <b>81 giorni</b>. Documenti ufficiali con link diretto.</p>
+        <a class="more" href="#">Vai alla gara →</a>
+      </article>
+    </div>
+
+    <!-- COLONNA LATERALE: in scadenza -->
+    <aside class="aside">
+      <div class="colhead"><span class="dot"></span>In scadenza questa settimana</div>
+
+      <a class="pill" href="#">
+        <div class="pn"><b>Taggia (IM)</b><span class="cd">3 giorni</span></div>
+        <small>🟢 Aperta · offerte entro 24/06 ore 12:00 · 18 lotti</small>
+      </a>
+
+      <a class="pill" href="#">
+        <div class="pn"><b>Loano (SV)</b><span class="cd">5 giorni</span></div>
+        <small>🟢 Aperta · chiarimenti entro 26/06 · sopralluogo il 25/06</small>
+      </a>
+
+      <a class="pill" href="#">
+        <div class="pn"><b>Laigueglia (SV)</b><span class="cd">6 giorni</span></div>
+        <small>🟡 In arrivo · pubblicazione attesa entro 27/06</small>
+      </a>
+
+      <div class="ed-note">🔒 Scadenze esatte, link ai documenti e <b>avvisi email</b> per i tuoi comuni: con <b>Radar Pro</b> — €500 una tantum + €100/mese.</div>
+    </aside>
+
+  </div>
+
+  <div class="stats">
+    <div class="stat"><div class="n">59</div><div class="l">Comuni monitorati</div></div>
+    <div class="stat"><div class="n">3</div><div class="l">Gare aperte ora</div></div>
+    <div class="stat"><div class="n">15</div><div class="l">Regioni coperte</div></div>
+  </div>
+
+  <div class="trust">Ogni voce nasce da <b>fonti pubbliche ufficiali</b> — Gazzetta Ufficiale, albi pretori, portali appalti — con link diretto e verifica umana ogni mattina.</div>
+</div></section>
+
+<section class="cta"><div class="wrap"><div class="cta-inner">
+  <h2>Ricevi il bollettino via email ogni mattina ☕</h2>
+  <p>Una sola email, alle 8:00: solo cosa è cambiato sulle gare che segui. Niente rumore, niente spam.</p>
+  <div class="subscribe">
+    <input type="email" placeholder="La tua email, es. studio@nomemail.it">
+    <button class="btn btn-primary">Iscrivimi</button>
+  </div>
+  <div class="micro">Con <b>Radar Pro</b> scegli i comuni e ricevi gli <b>avvisi puntuali</b> sulle tue gare · €500 + €100/mese · disdici quando vuoi.</div>
+</div></div></section>
+
+<div class="note">PROPOSTA 15 — “Il bollettino del giorno” · digest editoriale. Mockup statico, dati d'esempio. Palette e modello reali di Radar Concessioni.</div>
+</body>
+</html>
